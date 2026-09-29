@@ -6,4 +6,4 @@
 credentials
 .DS_Store
 vars.sh
-keys/*
+*/keys/*
