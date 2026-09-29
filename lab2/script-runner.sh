@@ -1,7 +1,5 @@
 #!/bin/bash
 set -euo pipefail
-# How to run:
-#./script-runner.sh scripts.list
 
 # Resolve the directory this script lives in, so it works regardless of cwd
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -16,25 +14,32 @@ if [[ ! -f "$LIST_PATH" ]]; then
     exit 1
 fi
 
-# Read non-empty, non-comment lines into an array
-SCRIPTS=()
+# Read non-empty, non-comment lines. Each line is: script.sh [arg1 arg2 ...]
+# Store as parallel arrays: one entry per line, each entry itself an array
+# encoded via a delimiter-safe approach (bash doesn't support arrays of arrays).
+LINES=()
 while IFS= read -r line || [[ -n "$line" ]]; do
     # trim leading/trailing whitespace
     line="$(echo "$line" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')"
     [[ -z "$line" ]] && continue
     [[ "$line" == \#* ]] && continue
-    SCRIPTS+=("$line")
+    LINES+=("$line")
 done < "$LIST_PATH"
 
-if [[ ${#SCRIPTS[@]} -eq 0 ]]; then
+if [[ ${#LINES[@]} -eq 0 ]]; then
     echo "No scripts found in ${LIST_PATH}"
     exit 0
 fi
 
-echo "Loaded ${#SCRIPTS[@]} script(s) from ${LIST_FILE}"
+echo "Loaded ${#LINES[@]} script(s) from ${LIST_FILE}"
 echo
 
-for script in "${SCRIPTS[@]}"; do
+for line in "${LINES[@]}"; do
+    # Split the line into script name + arguments (simple whitespace split)
+    read -ra parts <<< "$line"
+    script="${parts[0]}"
+    args=("${parts[@]:1}")
+
     script_path="${SCRIPT_DIR}/${script}"
 
     if [[ ! -f "$script_path" ]]; then
@@ -47,11 +52,15 @@ for script in "${SCRIPTS[@]}"; do
         chmod +x "$script_path"
     fi
 
-    echo "Next up: ${script}"
+    if [[ ${#args[@]} -gt 0 ]]; then
+        echo "Next up: ${script} (args: ${args[*]})"
+    else
+        echo "Next up: ${script}"
+    fi
     read -r -p "Press Enter to run it (Ctrl+C to abort)... "
 
-    echo "==> Running ${script}"
-    "$script_path"
+    echo "==> Running ${script} ${args[*]-}"
+    "$script_path" "${args[@]+"${args[@]}"}"
     echo "==> Finished ${script}"
     echo
 done
