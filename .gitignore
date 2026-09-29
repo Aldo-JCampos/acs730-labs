@@ -4,3 +4,4 @@
 .terraform/
 .env
 credentials
+.DS_Store
