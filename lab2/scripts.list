@@ -1,0 +1,15 @@
+# One script filename per line, in the order they should run.
+# Lines starting with # are ignored, as are blank lines.
+
+# --- AWS setup phase ---
+01-setup-aws-cli-connection.sh
+02-create-ssh-locally.sh
+
+# AWS infra creation
+03-create-security-group.sh
+04-launch-ec2-instance.sh
+
+# --- Deployment phase ---
+05-connect-and-create-sudo-user.sh
+06-deploy-web.sh
+07-clean-up.sh
