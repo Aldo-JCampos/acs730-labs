@@ -1,59 +1,78 @@
 #!/bin/bash
 set -euo pipefail
-# How to run:
-#./script-runner.sh scripts.list
 
-# Resolve the directory this script lives in, so it works regardless of cwd
+# ---------------------------------------------------------------------------
+# 0. Load vars.sh (same directory as this script)
+# ---------------------------------------------------------------------------
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+VARS_FILE="${SCRIPT_DIR}/vars.sh"
 
-# Name of the file listing the scripts to run, one per line.
-# Override by passing a different filename as the first argument.
-LIST_FILE="${1:-scripts.list}"
-LIST_PATH="${SCRIPT_DIR}/${LIST_FILE}"
+if [[ ! -f "$VARS_FILE" ]]; then
+  echo "ERROR: $VARS_FILE not found" >&2
+  exit 1
+fi
+source "$VARS_FILE"
 
-if [[ ! -f "$LIST_PATH" ]]; then
-    echo "ERROR: list file not found: ${LIST_PATH}" >&2
-    exit 1
+: "${INSTANCE_ID:?INSTANCE_ID not set in vars.sh}"
+: "${KEY_NAME:?KEY_NAME not set in vars.sh}"
+
+AWS_PROFILE_ARGS=()
+if [[ -n "${PROFILE:-}" ]]; then
+  AWS_PROFILE_ARGS=(--profile "$PROFILE")
 fi
 
-# Read non-empty, non-comment lines into an array
-SCRIPTS=()
-while IFS= read -r line || [[ -n "$line" ]]; do
-    # trim leading/trailing whitespace
-    line="$(echo "$line" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')"
-    [[ -z "$line" ]] && continue
-    [[ "$line" == \#* ]] && continue
-    SCRIPTS+=("$line")
-done < "$LIST_PATH"
-
-if [[ ${#SCRIPTS[@]} -eq 0 ]]; then
-    echo "No scripts found in ${LIST_PATH}"
-    exit 0
+# ---------------------------------------------------------------------------
+# 1. Confirm ssh-agent has an identity loaded (no key file ever referenced)
+# ---------------------------------------------------------------------------
+if [[ -z "${SSH_AUTH_SOCK:-}" ]]; then
+  echo "ERROR: no SSH_AUTH_SOCK found — is ssh-agent running for this session?" >&2
+  exit 1
+fi
+if ! ssh-add -l >/dev/null 2>&1; then
+  echo "ERROR: ssh-agent is running but has no keys loaded (ssh-add -l failed)" >&2
+  exit 1
 fi
 
-echo "Loaded ${#SCRIPTS[@]} script(s) from ${LIST_FILE}"
-echo
+# ---------------------------------------------------------------------------
+# 2. Confirm AWS CLI can resolve credentials
+# ---------------------------------------------------------------------------
+command -v aws >/dev/null 2>&1 || { echo "ERROR: aws CLI not found in PATH" >&2; exit 1; }
 
-for script in "${SCRIPTS[@]}"; do
-    script_path="${SCRIPT_DIR}/${script}"
+if ! aws sts get-caller-identity "${AWS_PROFILE_ARGS[@]}" >/dev/null 2>&1; then
+  echo "ERROR: AWS CLI cannot resolve credentials" >&2
+  exit 1
+fi
 
-    if [[ ! -f "$script_path" ]]; then
-        echo "ERROR: ${script} not found in ${SCRIPT_DIR}" >&2
-        exit 1
-    fi
+# ---------------------------------------------------------------------------
+# 3. Terminate the EC2 instance
+# ---------------------------------------------------------------------------
+STATE="$(aws ec2 describe-instances "${AWS_PROFILE_ARGS[@]}" \
+  --instance-ids "$INSTANCE_ID" \
+  --query 'Reservations[0].Instances[0].State.Name' \
+  --output text 2>/dev/null || echo "not-found")"
 
-    if [[ ! -x "$script_path" ]]; then
-        echo "Making ${script} executable..."
-        chmod +x "$script_path"
-    fi
+if [[ "$STATE" == "not-found" || "$STATE" == "None" ]]; then
+  echo "Instance $INSTANCE_ID not found — skipping termination."
+elif [[ "$STATE" == "terminated" ]]; then
+  echo "Instance $INSTANCE_ID already terminated."
+else
+  echo "Terminating instance $INSTANCE_ID (current state: $STATE)..."
+  aws ec2 terminate-instances "${AWS_PROFILE_ARGS[@]}" --instance-ids "$INSTANCE_ID" >/dev/null
 
-    echo "Next up: ${script}"
-    read -r -p "Press Enter to run it (Ctrl+C to abort)... "
+  echo "Waiting for instance $INSTANCE_ID to reach 'terminated'..."
+  aws ec2 wait instance-terminated "${AWS_PROFILE_ARGS[@]}" --instance-ids "$INSTANCE_ID"
+  echo "Instance $INSTANCE_ID terminated."
+fi
 
-    echo "==> Running ${script}"
-    "$script_path"
-    echo "==> Finished ${script}"
-    echo
-done
+# ---------------------------------------------------------------------------
+# 4. Delete the key pair uploaded to AWS
+# ---------------------------------------------------------------------------
+if ! aws ec2 describe-key-pairs "${AWS_PROFILE_ARGS[@]}" --key-names "$KEY_NAME" >/dev/null 2>&1; then
+  echo "Key pair $KEY_NAME not found — skipping deletion."
+else
+  echo "Deleting key pair $KEY_NAME..."
+  aws ec2 delete-key-pair "${AWS_PROFILE_ARGS[@]}" --key-name "$KEY_NAME" >/dev/null
+  echo "Key pair $KEY_NAME deleted."
+fi
 
-echo "All scripts completed successfully."
+echo "Cleanup complete."

@@ -1,21 +1,5 @@
 #!/bin/bash
 
-# Usage: ./01-setup-aws-cli-connection.sh <PROFILE_NAME>
-# A PROFILE name argument is required (e.g. ACS730). It will be used
-# to populate vars.sh and to label the AWS credentials/config examples below.
-if [ -z "$1" ]; then
-  echo "Error: missing required argument."
-  echo ""
-  echo "Usage: $0 <PROFILE_NAME>"
-  echo "  <PROFILE_NAME>  The AWS CLI profile name to configure (e.g. ACS730)"
-  echo ""
-  echo "Example:"
-  echo "  $0 ACS730"
-  exit 1
-fi
-
-PROFILE="$1"
-
 # Get the directory where this script is located
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 VARS_FILE="$SCRIPT_DIR/vars.sh"
@@ -27,8 +11,8 @@ echo ""
 
 # Create vars.sh, or clear it if it already exists, then populate it
 > "$VARS_FILE"
-echo "#!/bin/bash" >> "$VARS_FILE"
-echo "PROFILE=$PROFILE" >> "$VARS_FILE"
+echo "#!/usr/bin/env bash" >> "$VARS_FILE"
+echo "PROFILE=ACS730" >> "$VARS_FILE"
 chmod +x "$VARS_FILE"
 
 echo "vars.sh file created to store profile name, region"
@@ -46,7 +30,7 @@ echo "2. Go to your Vocareum lab environment"
 echo "3. Click the 'AWS CLI' / 'Account Details' button"
 echo "4. Copy the credentials block shown there"
 echo "5. Paste it into ~/.aws/credentials, replacing"
-echo "   the existing [$PROFILE] section"
+echo "   the existing [ACS730] section"
 echo ""
 echo "   The credentials file is located at:"
 echo "     ~/.aws/credentials"
@@ -61,7 +45,7 @@ echo "     [default]"
 echo "     aws_access_key_id=<KEY_ID_HERE>"
 echo "     aws_secret_access_key=<KEY_HERE>"
 echo ""
-echo "     [$PROFILE]"
+echo "     [ACS730]"
 echo "     aws_access_key_id=<KEY_ID_HERE>"
 echo "     aws_secret_access_key=<KEY_HERE>"
 echo "     aws_session_token=<TOKEN_HERE>"
@@ -79,12 +63,12 @@ echo "     [default]"
 echo "     region = <REGION_HERE>"
 echo "     output = <OUTPUT_HERE>"
 echo ""
-echo "     [profile $PROFILE]"
+echo "     [profile ACS730]"
 echo "     region = <REGION_HERE>"
 echo "     output = <OUTPUT_HERE>"
 echo ""
 echo "7. Verify with:"
-echo "     aws sts get-caller-identity --profile $PROFILE"
+echo "     aws sts get-caller-identity --profile ACS730"
 echo ""
 echo "Note: the session token expires every few hours —"
 echo "repeat this whenever your AWS calls start failing."

@@ -1,6 +1,10 @@
 #!/bin/bash
 set -euo pipefail
 
+# Disable the AWS CLI's pager (e.g. less) so command output never pauses
+# the script waiting for a keypress.
+export AWS_PAGER=""
+
 # Resolve the directory this script lives in, so vars.sh is written alongside it
 # regardless of where the script is invoked from.
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
