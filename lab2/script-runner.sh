@@ -1,88 +1,78 @@
 #!/bin/bash
 set -euo pipefail
 
-# Resolve the directory this script lives in, so it works regardless of cwd
+# ---------------------------------------------------------------------------
+# 0. Load vars.sh (same directory as this script)
+# ---------------------------------------------------------------------------
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+VARS_FILE="${SCRIPT_DIR}/vars.sh"
 
-# --- Argument parsing ---------------------------------------------------
-# -v            : wait for Enter before running each script
-# <list_file>   : optional, name of the list file (default: scripts.list)
-WAIT_MODE=0
-LIST_FILE="scripts.list"
+if [[ ! -f "$VARS_FILE" ]]; then
+  echo "ERROR: $VARS_FILE not found" >&2
+  exit 1
+fi
+source "$VARS_FILE"
 
-for arg in "$@"; do
-    case "$arg" in
-        -v)
-            WAIT_MODE=1
-            ;;
-        *)
-            LIST_FILE="$arg"
-            ;;
-    esac
-done
+: "${INSTANCE_ID:?INSTANCE_ID not set in vars.sh}"
+: "${KEY_NAME:?KEY_NAME not set in vars.sh}"
 
-LIST_PATH="${SCRIPT_DIR}/${LIST_FILE}"
-
-if [[ ! -f "$LIST_PATH" ]]; then
-    echo "ERROR: list file not found: ${LIST_PATH}" >&2
-    exit 1
+AWS_PROFILE_ARGS=()
+if [[ -n "${PROFILE:-}" ]]; then
+  AWS_PROFILE_ARGS=(--profile "$PROFILE")
 fi
 
-# Read non-empty, non-comment lines. Each line is: script.sh [arg1 arg2 ...]
-LINES=()
-while IFS= read -r line || [[ -n "$line" ]]; do
-    # trim leading/trailing whitespace
-    line="$(echo "$line" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')"
-    [[ -z "$line" ]] && continue
-    [[ "$line" == \#* ]] && continue
-    LINES+=("$line")
-done < "$LIST_PATH"
-
-if [[ ${#LINES[@]} -eq 0 ]]; then
-    echo "No scripts found in ${LIST_PATH}"
-    exit 0
+# ---------------------------------------------------------------------------
+# 1. Confirm ssh-agent has an identity loaded (no key file ever referenced)
+# ---------------------------------------------------------------------------
+if [[ -z "${SSH_AUTH_SOCK:-}" ]]; then
+  echo "ERROR: no SSH_AUTH_SOCK found — is ssh-agent running for this session?" >&2
+  exit 1
+fi
+if ! ssh-add -l >/dev/null 2>&1; then
+  echo "ERROR: ssh-agent is running but has no keys loaded (ssh-add -l failed)" >&2
+  exit 1
 fi
 
-echo "Loaded ${#LINES[@]} script(s) from ${LIST_FILE}"
-if [[ "$WAIT_MODE" -eq 1 ]]; then
-    echo "Mode: step-by-step (will wait for Enter before each script)"
+# ---------------------------------------------------------------------------
+# 2. Confirm AWS CLI can resolve credentials
+# ---------------------------------------------------------------------------
+command -v aws >/dev/null 2>&1 || { echo "ERROR: aws CLI not found in PATH" >&2; exit 1; }
+
+if ! aws sts get-caller-identity "${AWS_PROFILE_ARGS[@]}" >/dev/null 2>&1; then
+  echo "ERROR: AWS CLI cannot resolve credentials" >&2
+  exit 1
+fi
+
+# ---------------------------------------------------------------------------
+# 3. Terminate the EC2 instance
+# ---------------------------------------------------------------------------
+STATE="$(aws ec2 describe-instances "${AWS_PROFILE_ARGS[@]}" \
+  --instance-ids "$INSTANCE_ID" \
+  --query 'Reservations[0].Instances[0].State.Name' \
+  --output text 2>/dev/null || echo "not-found")"
+
+if [[ "$STATE" == "not-found" || "$STATE" == "None" ]]; then
+  echo "Instance $INSTANCE_ID not found — skipping termination."
+elif [[ "$STATE" == "terminated" ]]; then
+  echo "Instance $INSTANCE_ID already terminated."
 else
-    echo "Mode: run-all (no pausing between scripts)"
+  echo "Terminating instance $INSTANCE_ID (current state: $STATE)..."
+  aws ec2 terminate-instances "${AWS_PROFILE_ARGS[@]}" --instance-ids "$INSTANCE_ID" >/dev/null
+
+  echo "Waiting for instance $INSTANCE_ID to reach 'terminated'..."
+  aws ec2 wait instance-terminated "${AWS_PROFILE_ARGS[@]}" --instance-ids "$INSTANCE_ID"
+  echo "Instance $INSTANCE_ID terminated."
 fi
-echo
 
-for line in "${LINES[@]}"; do
-    # Split the line into script name + arguments (simple whitespace split)
-    read -ra parts <<< "$line"
-    script="${parts[0]}"
-    args=("${parts[@]:1}")
+# ---------------------------------------------------------------------------
+# 4. Delete the key pair uploaded to AWS
+# ---------------------------------------------------------------------------
+if ! aws ec2 describe-key-pairs "${AWS_PROFILE_ARGS[@]}" --key-names "$KEY_NAME" >/dev/null 2>&1; then
+  echo "Key pair $KEY_NAME not found — skipping deletion."
+else
+  echo "Deleting key pair $KEY_NAME..."
+  aws ec2 delete-key-pair "${AWS_PROFILE_ARGS[@]}" --key-name "$KEY_NAME" >/dev/null
+  echo "Key pair $KEY_NAME deleted."
+fi
 
-    script_path="${SCRIPT_DIR}/${script}"
-
-    if [[ ! -f "$script_path" ]]; then
-        echo "ERROR: ${script} not found in ${SCRIPT_DIR}" >&2
-        exit 1
-    fi
-
-    if [[ ! -x "$script_path" ]]; then
-        echo "Making ${script} executable..."
-        chmod +x "$script_path"
-    fi
-
-    if [[ ${#args[@]} -gt 0 ]]; then
-        echo "Next up: ${script} (args: ${args[*]})"
-    else
-        echo "Next up: ${script}"
-    fi
-
-    if [[ "$WAIT_MODE" -eq 1 ]]; then
-        read -r -p "Press Enter to run it (Ctrl+C to abort)... "
-    fi
-
-    echo "==> Running ${script} ${args[*]-}"
-    "$script_path" "${args[@]+"${args[@]}"}"
-    echo "==> Finished ${script}"
-    echo
-done
-
-echo "All scripts completed successfully."
+echo "Cleanup complete."
