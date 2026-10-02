@@ -4,9 +4,23 @@ set -euo pipefail
 # Resolve the directory this script lives in, so it works regardless of cwd
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# Name of the file listing the scripts to run, one per line.
-# Override by passing a different filename as the first argument.
-LIST_FILE="${1:-scripts.list}"
+# --- Argument parsing ---------------------------------------------------
+# -v            : wait for Enter before running each script
+# <list_file>   : optional, name of the list file (default: scripts.list)
+WAIT_MODE=0
+LIST_FILE="scripts.list"
+
+for arg in "$@"; do
+    case "$arg" in
+        -v)
+            WAIT_MODE=1
+            ;;
+        *)
+            LIST_FILE="$arg"
+            ;;
+    esac
+done
+
 LIST_PATH="${SCRIPT_DIR}/${LIST_FILE}"
 
 if [[ ! -f "$LIST_PATH" ]]; then
@@ -15,8 +29,6 @@ if [[ ! -f "$LIST_PATH" ]]; then
 fi
 
 # Read non-empty, non-comment lines. Each line is: script.sh [arg1 arg2 ...]
-# Store as parallel arrays: one entry per line, each entry itself an array
-# encoded via a delimiter-safe approach (bash doesn't support arrays of arrays).
 LINES=()
 while IFS= read -r line || [[ -n "$line" ]]; do
     # trim leading/trailing whitespace
@@ -32,6 +44,11 @@ if [[ ${#LINES[@]} -eq 0 ]]; then
 fi
 
 echo "Loaded ${#LINES[@]} script(s) from ${LIST_FILE}"
+if [[ "$WAIT_MODE" -eq 1 ]]; then
+    echo "Mode: step-by-step (will wait for Enter before each script)"
+else
+    echo "Mode: run-all (no pausing between scripts)"
+fi
 echo
 
 for line in "${LINES[@]}"; do
@@ -57,7 +74,10 @@ for line in "${LINES[@]}"; do
     else
         echo "Next up: ${script}"
     fi
-    read -r -p "Press Enter to run it (Ctrl+C to abort)... "
+
+    if [[ "$WAIT_MODE" -eq 1 ]]; then
+        read -r -p "Press Enter to run it (Ctrl+C to abort)... "
+    fi
 
     echo "==> Running ${script} ${args[*]-}"
     "$script_path" "${args[@]+"${args[@]}"}"
