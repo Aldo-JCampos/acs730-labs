@@ -8,6 +8,5 @@ echo "region:    ${AWS_REGION:-unset}"
 if [ -z "${AWS_REGION:-}" ; then
   echo "AWS_REGION is not set"
   exit 1
-fi
  
 echo "environment looks sane"
