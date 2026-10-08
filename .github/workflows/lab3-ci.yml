@@ -1,0 +1,21 @@
+name: lab3-ci
+ 
+on:
+  pull_request:
+ 
+permissions:
+  contents: read
+ 
+jobs:
+  static-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+ 
+      - name: Every shell script must parse
+        run: |
+          set -euo pipefail
+          for f in $(find lab3 -name '*.sh'); do
+            echo "checking $f"
+            bash -n "$f"
+          done
