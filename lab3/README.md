@@ -26,4 +26,12 @@ Terraform v1.10.3
 
 ## Experiments
 
+### Experiment 1 - Removing S3 backend
+**Prediction:** Removing the S3 backend would switch Terraform to local state. A GitHub Actions runner couldn’t see that state and might try to create a resource that already exists.
 
+**Result:** After I removed the backend and ran terraform init -migrate-state, Terraform offered to copy the existing state locally. I said yes, and it created a local terraform.tfstate containing my AWS resource.
+
+### Experiment 2 - Expired AWS credentials
+**Prediction:** Once my AWS lab session ended, the temporary credentials would expire, and the GitHub Actions workflow would fail at authentication with an ExpiredToken error.
+
+**Result:**After ending my Vocareum session, the workflow failed during terraform init with a 403 Forbidden error when accessing the S3 state file. I restarted the lab, refreshed the credentials, and reran the workflow, which succeeded with no changes. No repository files needed to be modified.
