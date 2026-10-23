@@ -23,3 +23,4 @@ Put your work for Lab 4 in this folder.
 ### Experiment 1: Invert the layer order
 I predicted the rebuild after a one-line code change would take about 5 seconds, close to the naive Dockerfile, because pip would have to run again. With COPY app.py placed above RUN pip install, the rebuild took 4.742s and RUN pip install ran again (3.9s) instead of showing CACHED, compared with 0.639s for my Dockerfile. Docker reuses a layer only if everything above it is unchanged, so putting COPY app.py first means every code change invalidates that layer and every layer after it, including the pip install, while in the right order only the layers after COPY app.py rebuild.
 
+
