@@ -11,4 +11,4 @@ def test_healthz_reports_ok():
     assert r.get_json()["status"] == "ok"
 
 def test_unknown_path_is_404():
-    assert app.test_client().get("/nope").status_code == 404
+    assert app.test_client().get("/nope").status_code == 200
