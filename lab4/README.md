@@ -34,11 +34,15 @@ Times come from the GitHub Actions run pages: the pip install step of `test (3.1
 
 Limits: the baseline and the cache miss are single runs, and the hit runs varied from 72s to 82s, so differences of a few seconds are within the noise.
 
+## Composite action and reusable workflow
+
+- **Composite action (`python-deps`):** the dependency setup is two steps (`setup-python` with the pip cache, then `pip install`) that must run on the same runner as the tests, inside the `test` job and once per matrix cell, so it is an action.
+- **Reusable workflow (`docker-build`):** the image build is a whole job with its own runner that needs `packages: write`, which the `test` job must not have, so it is a workflow, and it returns `image-ref` to the caller.
 
 ## Experiments
 
 ### Experiment 1: Invert the layer order
 I predicted the rebuild after a one-line code change would take about 5 seconds, close to the naive Dockerfile, because pip would have to run again. With COPY app.py placed above RUN pip install, the rebuild took 4.742s and RUN pip install ran again (3.9s) instead of showing CACHED, compared with 0.639s for my Dockerfile. Docker reuses a layer only if everything above it is unchanged, so putting COPY app.py first means every code change invalidates that layer and every layer after it, including the pip install, while in the right order only the layers after COPY app.py rebuild.
-
-
+### Experiment 3:
+Take away `contents: read` from the `publish` job.** I predicted that `publish` would fail at `actions/checkout` with "repository not found", because a job-level `permissions:` block replaces the workflow-level one and drops `contents` to none. It did not fail: `publish` stayed green, because the repository is public and checkout can read a public repo without a token that has `contents` access. Declaring one permission still zeroes the others, which is safer than additive behaviour, but this failure would only show up on a private repository.
 
