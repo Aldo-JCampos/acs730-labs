@@ -1,0 +1,67 @@
+name: lab5-ci
+ 
+on:
+  pull_request:
+    paths: ['lab5/**', '.github/workflows/lab5-ci.yml']
+  push:
+    branches: [main]
+    paths: ['lab5/**', '.github/workflows/lab5-ci.yml']
+ 
+# Read-only. The default token is the only credential in this entire file.
+permissions:
+  contents: read
+ 
+defaults:
+  run:
+    working-directory: lab5
+ 
+jobs:
+  gates:
+    name: fmt and validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.10.3
+          terraform_wrapper: false
+      - run: terraform fmt -check -recursive
+      # -backend=false: no state, no backend, no credentials.
+      - run: terraform init -backend=false -input=false
+      - run: terraform validate
+ 
+  localstack:
+    name: plan and apply against LocalStack
+    runs-on: ubuntu-latest
+    needs: gates
+ 
+    services:
+      localstack:
+        image: localstack/localstack:3.8
+        ports: ['4566:4566']
+        env:
+          SERVICES: ec2,s3,sts,iam
+        options: >-
+          --health-cmd "curl -sf http://localhost:4566/_localstack/health"
+          --health-interval 10s
+          --health-retries 12
+ 
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.10.3
+          terraform_wrapper: false
+      - name: Wait for LocalStack
+        run: |
+          for i in $(seq 1 30); do
+            curl -sf http://localhost:4566/_localstack/health >/dev/null && exit 0
+            sleep 5
+          done
+          echo "LocalStack never became healthy"; exit 1
+      - run: terraform init -input=false
+      - run: terraform plan -input=false -var-file=localstack.tfvars -out=tfplan
+      - run: terraform apply -input=false -auto-approve tfplan
+      - run: terraform output
+      - if: always()
+        run: terraform destroy -input=false -auto-approve -var-file=localstack.tfvars
