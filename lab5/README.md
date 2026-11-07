@@ -51,3 +51,33 @@ confirmed the required check blocked the merge, then fixed it.
   (LocalStack does not enforce it) or that user_data works (LocalStack never
   boots the instance). The real check belongs on merge or on a schedule,
   once, not per pull request.
+
+## Experiments
+
+**Experiment 2 - delete the depends_on.**
+Prediction: the plan would not change at all (still 10 to add, 0 to change,
+0 to destroy), because depends_on adds an edge to the dependency graph, which
+affects the order of apply, not the attributes of any resource.
+Result: with depends_on commented out, the plan was still "Plan: 10 to add, 0
+to change, 0 to destroy." The only difference in the output was the order in
+which Terraform printed its parallel data-source reads (data.aws_region.current),
+which is not a real change.
+Why: without depends_on the instance has no edge to the route table
+association, so Terraform may create it in parallel with the association. On
+real AWS the instance can then boot before the default route exists, user_data
+runs dnf with no route to the internet, and the instance comes up with no
+nginx and no error. LocalStack never boots the instance or runs user_data, so
+it can never show this bug, which is why the plan looks fine on both targets.
+
+**Experiment 5 - point at real AWS, plan only.**
+Prediction: provider_target would say aws (us-east-1), the plan would show 9
+resources to add (the bucket drops out because create_artifact_bucket
+defaults to false), and the aws_ami data source would resolve to the latest
+Amazon Linux 2023 image in us-east-1.
+Result: provider_target said aws (us-east-1), the plan showed 9 to add,
+and the instance's ami resolved to ami-0820d0c589175bc01. I did not run apply.
+The one line that would have warned me: the provider_target output line
+(aws (us-east-1) instead of localstack). The root cause was leaving off
+-var-file=localstack.tfvars, because use_localstack defaults to false and the
+workstation has live LabRole credentials, so Terraform silently aims at real
+infrastructure.
