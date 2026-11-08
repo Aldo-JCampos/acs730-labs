@@ -10,13 +10,13 @@ RUN useradd --create-home --uid 10001 appuser
 
 WORKDIR /app
 
+COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY requirements.txt ./
 COPY app.py ./
 
 USER appuser
 
 EXPOSE 8000
 
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--workers", "2", "app:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "2", "app:app"]
