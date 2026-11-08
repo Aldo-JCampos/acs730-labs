@@ -2,8 +2,17 @@
 #
 # Everything lives in one file on purpose: Terraform loads every .tf file in a
 # directory and does not care about the names.
-#
-# This configuration does not currently pass `terraform validate`. Tasks 3 and 4.
+
+terraform {
+  required_version = "~> 1.10"
+
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+  }
+}
 
 variable "aws_region" {
   description = "Region to deploy into. LocalStack ignores it, but the provider still requires one."
@@ -170,7 +179,7 @@ resource "aws_route_table" "public" {
 resource "aws_route_table_association" "public" {
   for_each = var.public_subnets
 
-  subnet_id      = aws_subnet.public.id
+  subnet_id      = aws_subnet.public[each.key].id
   route_table_id = aws_route_table.public.id
 }
 
@@ -180,7 +189,7 @@ resource "aws_security_group" "web" {
   vpc_id      = aws_vpc.main.id
 
   dynamic "ingress" {
-    for_each = var.ingress_port
+    for_each = var.ingress_ports
 
     content {
       description = "Inbound TCP ${ingress.value}"
