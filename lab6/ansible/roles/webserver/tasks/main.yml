@@ -1,0 +1,46 @@
+---
+- name: Install the packages the application needs
+  ansible.builtin.dnf:
+    name:
+      - python3
+      - rsync
+    state: present
+ 
+- name: Create the unprivileged service account
+  ansible.builtin.user:
+    name: "{{ app_user }}"
+    system: true
+    create_home: false
+    shell: /sbin/nologin
+ 
+- name: Create the application directory
+  ansible.builtin.file:
+    path: "{{ app_dir }}"
+    state: directory
+    owner: "{{ app_user }}"
+    group: "{{ app_user }}"
+    mode: "0755"
+ 
+- name: Render the landing page from a template
+  ansible.builtin.template:
+    src: index.html.j2
+    dest: "{{ app_dir }}/index.html"
+    owner: "{{ app_user }}"
+    group: "{{ app_user }}"
+    mode: "0644"
+ 
+- name: Install the systemd unit from a template
+  ansible.builtin.template:
+    src: acs730-web.service.j2
+    dest: /etc/systemd/system/acs730-web.service
+    owner: root
+    group: root
+    mode: "0644"
+  notify: Restart acs730-web
+ 
+- name: Enable the service and make sure it is running
+  ansible.builtin.systemd:
+    name: acs730-web
+    enabled: true
+    state: started
+    daemon_reload: true

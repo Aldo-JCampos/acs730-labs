@@ -1,0 +1,25 @@
+---
+# amazon.aws.aws_ec2 -- builds the host list by querying EC2 at run time.
+plugin: amazon.aws.aws_ec2
+ 
+regions:
+  - us-east-1
+ 
+# Only this lab's instances, and only ones that are up. Without the
+# state filter a terminated instance lingers in the API for an hour and
+# Ansible tries to open a session to something that is gone.
+filters:
+  "tag:Lab": lab6
+  instance-state-name: running
+ 
+# Address each host by its instance id, because that is what Session
+# Manager connects to. An SSM session has no use for an IP address.
+hostnames:
+  - instance-id
+ 
+# Turn the Role tag into a group: "role_web" means every instance
+# tagged Role=web, recomputed on every run.
+keyed_groups:
+  - key: tags.Role
+    prefix: role
+    separator: "_"

@@ -1,0 +1,7 @@
+---
+- name: Configure the ACS730 Lab 6 web servers
+  hosts: all
+  become: true
+ 
+  roles:
+    - webserver

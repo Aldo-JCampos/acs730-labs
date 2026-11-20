@@ -1,0 +1,6 @@
+---
+- name: Restart acs730-web
+  ansible.builtin.systemd:
+    name: acs730-web
+    state: restarted
+    daemon_reload: true
