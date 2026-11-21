@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+  <head><title>{{ site_title }}</title></head>
+  <body>
+    <h1>{{ site_title }}</h1>
+    <p>Host name: {{ ansible_facts['hostname'] }}</p>
+    <p>Private IP: {{ ansible_facts['default_ipv4']['address'] }}</p>
+    <p>Distribution: {{ ansible_facts['distribution'] }} {{ ansible_facts['distribution_version'] }}</p>
+    <p>Served by: {{ app_user }} on port {{ app_port }}</p>
+    <p>Build: {{ build_tag }}</p>
+  </body>
+</html>

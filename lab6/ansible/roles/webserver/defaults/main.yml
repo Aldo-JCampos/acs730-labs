@@ -1,0 +1,6 @@
+---
+app_user: acs730web
+app_dir: /opt/acs730-web
+app_port: 80
+site_title: "ACS730 Lab 6"
+build_tag: "ansible-converge"
