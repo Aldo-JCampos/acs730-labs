@@ -1,0 +1,20 @@
+      [31m-[0m[0m "i-07e425063d646b046",
+      [31m-[0m[0m "i-00faebcb89661f95b",
+    ] [90m-> null[0m[0m
+  [31m-[0m[0m web_public_ips      = [
+      [31m-[0m[0m "98.81.80.231",
+      [31m-[0m[0m "13.221.125.49",
+    ] [90m-> null[0m[0m
+[0m[1maws_instance.web[0]: Destroying... [id=i-07e425063d646b046][0m[0m
+[0m[1maws_instance.web[1]: Destroying... [id=i-00faebcb89661f95b][0m[0m
+[0m[1maws_instance.web[1]: Still destroying... [id=i-00faebcb89661f95b, 10s elapsed][0m[0m
+[0m[1maws_instance.web[0]: Still destroying... [id=i-07e425063d646b046, 10s elapsed][0m[0m
+[0m[1maws_instance.web[1]: Destruction complete after 20s[0m
+[0m[1maws_instance.web[0]: Still destroying... [id=i-07e425063d646b046, 20s elapsed][0m[0m
+[0m[1maws_instance.web[0]: Still destroying... [id=i-07e425063d646b046, 30s elapsed][0m[0m
+[0m[1maws_instance.web[0]: Destruction complete after 30s[0m
+[0m[1maws_security_group.web: Destroying... [id=sg-06fd0b2e96be97448][0m[0m
+[0m[1maws_security_group.web: Destruction complete after 0s[0m
+[0m[1m[32m
+Destroy complete! Resources: 3 destroyed.
+[0m

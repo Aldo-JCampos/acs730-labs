@@ -70,7 +70,7 @@ build {
   sources = ["source.amazon-ebs.web"]
 
   provisioner "ansible" {
-    playbook_file = var.playbook_file
+    playbook_file = "${path.root}/${var.playbook_file}"
     user          = "ec2-user"
 
     # Talk straight to the build instance instead of through Packer's
@@ -88,7 +88,7 @@ build {
   # Runs after the role, so /opt/acs730-web already exists and nothing
   # the role manages is overwritten.
   provisioner "file" {
-    source      = "files/index.html"
+    source      = "${path.root}/files/index.html"
     destination = "/tmp/baked.html"
   }
 
