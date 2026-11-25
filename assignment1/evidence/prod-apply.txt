@@ -1,0 +1,522 @@
+prod	Set up job	﻿2026-11-25T15:14:17.6570862Z Current runner version: '2.338.2'
+prod	Set up job	2026-11-25T15:14:17.6601551Z ##[group]Runner Image Provisioner
+prod	Set up job	2026-11-25T15:14:17.6602541Z Hosted Compute Agent
+prod	Set up job	2026-11-25T15:14:17.6603282Z Version: 20261111.635
+prod	Set up job	2026-11-25T15:14:17.6604006Z Commit: b8a594ea514ff44cadb5342986c68b1eac6e22ed
+prod	Set up job	2026-11-25T15:14:17.6604864Z Build Date: 2026-11-11T01:49:01Z
+prod	Set up job	2026-11-25T15:14:17.6605681Z Worker ID: {de5faa60-200e-4fe3-9c17-085850c9b60a}
+prod	Set up job	2026-11-25T15:14:17.6606775Z Region: northcentralus
+prod	Set up job	2026-11-25T15:14:17.6607628Z Cloud: Azure
+prod	Set up job	2026-11-25T15:14:17.6608284Z ##[endgroup]
+prod	Set up job	2026-11-25T15:14:17.6609774Z ##[group]Operating System
+prod	Set up job	2026-11-25T15:14:17.6610592Z Ubuntu
+prod	Set up job	2026-11-25T15:14:17.6611174Z 26.04.1
+prod	Set up job	2026-11-25T15:14:17.6611788Z LTS
+prod	Set up job	2026-11-25T15:14:17.6612449Z ##[endgroup]
+prod	Set up job	2026-11-25T15:14:17.6613090Z ##[group]Runner Image
+prod	Set up job	2026-11-25T15:14:17.6613768Z Image: ubuntu-26.04
+prod	Set up job	2026-11-25T15:14:17.6614426Z Version: 20261116.202.1
+prod	Set up job	2026-11-25T15:14:17.6615671Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261116.202/images/ubuntu/Ubuntu2604-Readme.md
+prod	Set up job	2026-11-25T15:14:17.6617860Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261116.202
+prod	Set up job	2026-11-25T15:14:17.6618936Z ##[endgroup]
+prod	Set up job	2026-11-25T15:14:17.6620244Z ##[group]GITHUB_TOKEN Permissions
+prod	Set up job	2026-11-25T15:14:17.6622736Z Contents: read
+prod	Set up job	2026-11-25T15:14:17.6623484Z Metadata: read
+prod	Set up job	2026-11-25T15:14:17.6624097Z ##[endgroup]
+prod	Set up job	2026-11-25T15:14:17.6626848Z Secret source: Actions
+prod	Set up job	2026-11-25T15:14:17.6627989Z Cache mode: write
+prod	Set up job	2026-11-25T15:14:17.6629139Z Prepare workflow directory
+prod	Set up job	2026-11-25T15:14:17.7035924Z Prepare all required actions
+prod	Set up job	2026-11-25T15:14:17.7105706Z Getting action download info
+prod	Set up job	2026-11-25T15:14:17.9363406Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+prod	Set up job	2026-11-25T15:14:18.0182981Z Download action repository 'aws-actions/configure-aws-credentials@v4' (SHA:7474bc4690e29a8392af63c5b98e7449536d5c3a)
+prod	Set up job	2026-11-25T15:14:18.2955883Z Download action repository 'hashicorp/setup-terraform@v3' (SHA:b9cd54a3c349d3f38e8881555d616ced269862dd)
+prod	Set up job	2026-11-25T15:14:18.6578953Z Complete job name: prod
+prod	Run actions/checkout@v4	﻿2026-11-25T15:14:18.7481286Z ##[group]Run actions/checkout@v4
+prod	Run actions/checkout@v4	2026-11-25T15:14:18.7482581Z with:
+prod	Run actions/checkout@v4	2026-11-25T15:14:18.7483577Z   repository: Aldo-JCampos/acs730-labs
+prod	Run actions/checkout@v4	2026-11-25T15:14:18.7492252Z   token: ***
+prod	Run actions/checkout@v4	2026-11-25T15:14:18.7493221Z   ssh-strict: true
+prod	Run actions/checkout@v4	2026-11-25T15:14:18.7494173Z   ssh-user: git
+prod	Run actions/checkout@v4	2026-11-25T15:14:18.7495159Z   persist-credentials: true
+prod	Run actions/checkout@v4	2026-11-25T15:14:18.7496309Z   clean: true
+prod	Run actions/checkout@v4	2026-11-25T15:14:18.7497306Z   sparse-checkout-cone-mode: true
+prod	Run actions/checkout@v4	2026-11-25T15:14:18.7498439Z   fetch-depth: 1
+prod	Run actions/checkout@v4	2026-11-25T15:14:18.7499313Z   fetch-tags: false
+prod	Run actions/checkout@v4	2026-11-25T15:14:18.7500271Z   show-progress: true
+prod	Run actions/checkout@v4	2026-11-25T15:14:18.7501232Z   lfs: false
+prod	Run actions/checkout@v4	2026-11-25T15:14:18.7502154Z   submodules: false
+prod	Run actions/checkout@v4	2026-11-25T15:14:18.7503184Z   set-safe-directory: true
+prod	Run actions/checkout@v4	2026-11-25T15:14:18.7504293Z   allow-unsafe-pr-checkout: false
+prod	Run actions/checkout@v4	2026-11-25T15:14:18.7505783Z env:
+prod	Run actions/checkout@v4	2026-11-25T15:14:18.7506897Z   TF_IN_AUTOMATION: true
+prod	Run actions/checkout@v4	2026-11-25T15:14:18.7507977Z ##[endgroup]
+prod	Run actions/checkout@v4	2026-11-25T15:14:18.9781581Z Syncing repository: Aldo-JCampos/acs730-labs
+prod	Run actions/checkout@v4	2026-11-25T15:14:18.9785083Z ##[group]Getting Git version info
+prod	Run actions/checkout@v4	2026-11-25T15:14:18.9787250Z Working directory is '/home/runner/work/acs730-labs/acs730-labs'
+prod	Run actions/checkout@v4	2026-11-25T15:14:18.9789448Z [command]/usr/bin/git version
+prod	Run actions/checkout@v4	2026-11-25T15:14:18.9817690Z git version 2.56.1
+prod	Run actions/checkout@v4	2026-11-25T15:14:18.9840059Z ##[endgroup]
+prod	Run actions/checkout@v4	2026-11-25T15:14:18.9854491Z Temporarily overriding HOME='/home/runner/work/_temp/f22dde1b-081c-4185-a907-d0d395c0a798' before making global git config changes
+prod	Run actions/checkout@v4	2026-11-25T15:14:18.9858683Z Adding repository directory to the temporary git global config as a safe directory
+prod	Run actions/checkout@v4	2026-11-25T15:14:18.9878559Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/acs730-labs/acs730-labs
+prod	Run actions/checkout@v4	2026-11-25T15:14:18.9926447Z Deleting the contents of '/home/runner/work/acs730-labs/acs730-labs'
+prod	Run actions/checkout@v4	2026-11-25T15:14:18.9932034Z ##[group]Initializing the repository
+prod	Run actions/checkout@v4	2026-11-25T15:14:18.9937565Z [command]/usr/bin/git init /home/runner/work/acs730-labs/acs730-labs
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.0031429Z hint: Using 'master' as the name for the initial branch. This default branch name
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.0035726Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.0040082Z hint: to use in all of your new repositories, which will suppress this warning,
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.0043215Z hint: call:
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.0045160Z hint:
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.0047660Z hint: 	git config --global init.defaultBranch <name>
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.0050273Z hint:
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.0052754Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.0056287Z hint: 'development'. The just-created branch can be renamed via this command:
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.0059719Z hint:
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.0061737Z hint: 	git branch -m <name>
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.0064000Z hint:
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.0066987Z hint: Disable this message with "git config set advice.defaultBranchName false"
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.0071636Z Initialized empty Git repository in /home/runner/work/acs730-labs/acs730-labs/.git/
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.0079390Z [command]/usr/bin/git remote add origin https://github.com/Aldo-JCampos/acs730-labs
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.0105735Z ##[endgroup]
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.0108886Z ##[group]Disabling automatic garbage collection
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.0111603Z [command]/usr/bin/git config --local gc.auto 0
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.0147591Z ##[endgroup]
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.0150295Z ##[group]Setting up auth
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.0155454Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.0195807Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.0633947Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.0680156Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.0982810Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.1022556Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.1321296Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.1367660Z ##[endgroup]
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.1369640Z ##[group]Fetching the repository
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.1380520Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +762f0768088e3f24cd5358bfb2195cf9a22731fb:refs/remotes/origin/main
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.6499599Z From https://github.com/Aldo-JCampos/acs730-labs
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.6502134Z  * [new ref]         762f0768088e3f24cd5358bfb2195cf9a22731fb -> origin/main
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.6509464Z ##[endgroup]
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.6512268Z ##[group]Determining the checkout info
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.6516696Z ##[endgroup]
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.6518997Z [command]/usr/bin/git sparse-checkout disable
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.6579868Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.6648013Z ##[group]Checking out the ref
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.6651051Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.7079073Z Switched to a new branch 'main'
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.7083284Z branch 'main' set up to track 'origin/main'.
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.7096184Z ##[endgroup]
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.7150321Z [command]/usr/bin/git log -1 --format=%H
+prod	Run actions/checkout@v4	2026-11-25T15:14:19.7180788Z 762f0768088e3f24cd5358bfb2195cf9a22731fb
+prod	Run aws-actions/configure-aws-credentials@v4	﻿2026-11-25T15:14:19.7728330Z ##[group]Run aws-actions/configure-aws-credentials@v4
+prod	Run aws-actions/configure-aws-credentials@v4	2026-11-25T15:14:19.7729835Z with:
+prod	Run aws-actions/configure-aws-credentials@v4	2026-11-25T15:14:19.7731065Z   aws-access-key-id: ***
+prod	Run aws-actions/configure-aws-credentials@v4	2026-11-25T15:14:19.7732768Z   aws-secret-access-key: ***
+prod	Run aws-actions/configure-aws-credentials@v4	2026-11-25T15:14:19.7749369Z   aws-session-token: ***
+prod	Run aws-actions/configure-aws-credentials@v4	2026-11-25T15:14:19.7750874Z   aws-region: us-east-1
+prod	Run aws-actions/configure-aws-credentials@v4	2026-11-25T15:14:19.7752135Z   audience: sts.amazonaws.com
+prod	Run aws-actions/configure-aws-credentials@v4	2026-11-25T15:14:19.7753496Z   output-env-credentials: true
+prod	Run aws-actions/configure-aws-credentials@v4	2026-11-25T15:14:19.7754772Z env:
+prod	Run aws-actions/configure-aws-credentials@v4	2026-11-25T15:14:19.7755767Z   TF_IN_AUTOMATION: true
+prod	Run aws-actions/configure-aws-credentials@v4	2026-11-25T15:14:19.7757137Z ##[endgroup]
+prod	Run aws-actions/configure-aws-credentials@v4	2026-11-25T15:14:20.0320013Z Proceeding with IAM user credentials
+prod	Run hashicorp/setup-terraform@v3	﻿2026-11-25T15:14:20.0536661Z ##[group]Run hashicorp/setup-terraform@v3
+prod	Run hashicorp/setup-terraform@v3	2026-11-25T15:14:20.0537979Z with:
+prod	Run hashicorp/setup-terraform@v3	2026-11-25T15:14:20.0538928Z   terraform_version: 1.10.3
+prod	Run hashicorp/setup-terraform@v3	2026-11-25T15:14:20.0540062Z   terraform_wrapper: false
+prod	Run hashicorp/setup-terraform@v3	2026-11-25T15:14:20.0541310Z   cli_config_credentials_hostname: app.terraform.io
+prod	Run hashicorp/setup-terraform@v3	2026-11-25T15:14:20.0542676Z env:
+prod	Run hashicorp/setup-terraform@v3	2026-11-25T15:14:20.0543583Z   TF_IN_AUTOMATION: true
+prod	Run hashicorp/setup-terraform@v3	2026-11-25T15:14:20.0544688Z   AWS_DEFAULT_REGION: us-east-1
+prod	Run hashicorp/setup-terraform@v3	2026-11-25T15:14:20.0545834Z   AWS_REGION: us-east-1
+prod	Run hashicorp/setup-terraform@v3	2026-11-25T15:14:20.0547224Z   AWS_ACCESS_KEY_ID: ***
+prod	Run hashicorp/setup-terraform@v3	2026-11-25T15:14:20.0548650Z   AWS_SECRET_ACCESS_KEY: ***
+prod	Run hashicorp/setup-terraform@v3	2026-11-25T15:14:20.0562662Z   AWS_SESSION_TOKEN: ***
+prod	Run hashicorp/setup-terraform@v3	2026-11-25T15:14:20.0563745Z ##[endgroup]
+prod	Run hashicorp/setup-terraform@v3	2026-11-25T15:14:20.2020893Z (node:2422) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+prod	Run hashicorp/setup-terraform@v3	2026-11-25T15:14:20.2027619Z (Use `node --trace-deprecation ...` to show where the warning was created)
+prod	Run hashicorp/setup-terraform@v3	2026-11-25T15:14:20.4317528Z [command]/usr/bin/unzip -o -q /home/runner/work/_temp/08500ced-7d8f-491f-a3d6-d53f0f0a3ab2
+prod	Run terraform -chdir=assignment1/terraform/prod init -input=false	﻿2026-11-25T15:14:21.1163722Z ##[group]Run terraform -chdir=assignment1/terraform/prod init -input=false
+prod	Run terraform -chdir=assignment1/terraform/prod init -input=false	2026-11-25T15:14:21.1164461Z ^[[36;1mterraform -chdir=assignment1/terraform/prod init -input=false^[[0m
+prod	Run terraform -chdir=assignment1/terraform/prod init -input=false	2026-11-25T15:14:21.1209349Z shell: /usr/bin/bash -e {0}
+prod	Run terraform -chdir=assignment1/terraform/prod init -input=false	2026-11-25T15:14:21.1209670Z env:
+prod	Run terraform -chdir=assignment1/terraform/prod init -input=false	2026-11-25T15:14:21.1209914Z   TF_IN_AUTOMATION: true
+prod	Run terraform -chdir=assignment1/terraform/prod init -input=false	2026-11-25T15:14:21.1210223Z   AWS_DEFAULT_REGION: us-east-1
+prod	Run terraform -chdir=assignment1/terraform/prod init -input=false	2026-11-25T15:14:21.1210507Z   AWS_REGION: us-east-1
+prod	Run terraform -chdir=assignment1/terraform/prod init -input=false	2026-11-25T15:14:21.1210955Z   AWS_ACCESS_KEY_ID: ***
+prod	Run terraform -chdir=assignment1/terraform/prod init -input=false	2026-11-25T15:14:21.1211324Z   AWS_SECRET_ACCESS_KEY: ***
+prod	Run terraform -chdir=assignment1/terraform/prod init -input=false	2026-11-25T15:14:21.1214877Z   AWS_SESSION_TOKEN: ***
+prod	Run terraform -chdir=assignment1/terraform/prod init -input=false	2026-11-25T15:14:21.1215126Z ##[endgroup]
+prod	Run terraform -chdir=assignment1/terraform/prod init -input=false	2026-11-25T15:14:21.1657002Z ^[[0m^[[1mInitializing the backend...^[[0m
+prod	Run terraform -chdir=assignment1/terraform/prod init -input=false	2026-11-25T15:14:21.4250476Z ^[[0m^[[32m
+prod	Run terraform -chdir=assignment1/terraform/prod init -input=false	2026-11-25T15:14:21.4251151Z Successfully configured the backend "s3"! Terraform will automatically
+prod	Run terraform -chdir=assignment1/terraform/prod init -input=false	2026-11-25T15:14:21.4252091Z use this backend unless the backend configuration changes.^[[0m
+prod	Run terraform -chdir=assignment1/terraform/prod init -input=false	2026-11-25T15:14:21.4917823Z ^[[0m^[[1mInitializing modules...^[[0m
+prod	Run terraform -chdir=assignment1/terraform/prod init -input=false	2026-11-25T15:14:21.4933652Z - web in ../modules/web
+prod	Run terraform -chdir=assignment1/terraform/prod init -input=false	2026-11-25T15:14:21.4961534Z ^[[0m^[[1mInitializing provider plugins...^[[0m
+prod	Run terraform -chdir=assignment1/terraform/prod init -input=false	2026-11-25T15:14:21.4962651Z - Reusing previous version of hashicorp/aws from the dependency lock file
+prod	Run terraform -chdir=assignment1/terraform/prod init -input=false	2026-11-25T15:14:21.6794838Z - Installing hashicorp/aws v5.100.0...
+prod	Run terraform -chdir=assignment1/terraform/prod init -input=false	2026-11-25T15:14:28.6806422Z - Installed hashicorp/aws v5.100.0 (signed by HashiCorp)
+prod	Run terraform -chdir=assignment1/terraform/prod init -input=false	2026-11-25T15:14:28.6807237Z 
+prod	Run terraform -chdir=assignment1/terraform/prod init -input=false	2026-11-25T15:14:28.6808096Z ^[[0m^[[1m^[[32mTerraform has been successfully initialized!^[[0m^[[32m^[[0m
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	﻿2026-11-25T15:14:28.6875583Z ##[group]Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:28.6876563Z ^[[36;1mterraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve^[[0m
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:28.6913183Z shell: /usr/bin/bash -e {0}
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:28.6913469Z env:
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:28.6913702Z   TF_IN_AUTOMATION: true
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:28.6913970Z   AWS_DEFAULT_REGION: us-east-1
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:28.6914284Z   AWS_REGION: us-east-1
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:28.6914847Z   AWS_ACCESS_KEY_ID: ***
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:28.6915253Z   AWS_SECRET_ACCESS_KEY: ***
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:28.6919070Z   AWS_SESSION_TOKEN: ***
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:28.6919332Z ##[endgroup]
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:31.8026739Z ^[[0m^[[1mmodule.web.data.aws_ami.al2023: Reading...^[[0m^[[0m
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:31.8027593Z ^[[0m^[[1mmodule.web.data.aws_ssm_parameter.db_password: Reading...^[[0m^[[0m
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:31.9854354Z ^[[0m^[[1mmodule.web.data.aws_ssm_parameter.db_password: Read complete after 0s [id=/acs730/prod/db_password]^[[0m
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.2966908Z ^[[0m^[[1mmodule.web.data.aws_ami.al2023: Read complete after 0s [id=ami-062caee4b7b602eb0]^[[0m
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4536540Z 
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4537364Z Terraform used the selected providers to generate the following execution
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4538143Z plan. Resource actions are indicated with the following symbols:
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4538931Z   ^[[32m+^[[0m create^[[0m
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4539200Z 
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4539400Z Terraform will perform the following actions:
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4539949Z 
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4540366Z ^[[1m  # module.web.aws_cloudwatch_metric_alarm.cpu_high[0]^[[0m will be created
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4541178Z ^[[0m  ^[[32m+^[[0m^[[0m resource "aws_cloudwatch_metric_alarm" "cpu_high" {
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4541911Z       ^[[32m+^[[0m^[[0m actions_enabled                       = true
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4542829Z       ^[[32m+^[[0m^[[0m alarm_description                     = "Average CPU above 70% for two 5-minute periods"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4543709Z       ^[[32m+^[[0m^[[0m alarm_name                            = "acs730-a1-prod-cpu-high-0"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4544558Z       ^[[32m+^[[0m^[[0m arn                                   = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4545354Z       ^[[32m+^[[0m^[[0m comparison_operator                   = "GreaterThanThreshold"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4546405Z       ^[[32m+^[[0m^[[0m dimensions                            = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4547249Z       ^[[32m+^[[0m^[[0m evaluate_low_sample_count_percentiles = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4547974Z       ^[[32m+^[[0m^[[0m evaluation_periods                    = 2
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4548650Z       ^[[32m+^[[0m^[[0m id                                    = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4549391Z       ^[[32m+^[[0m^[[0m metric_name                           = "CPUUtilization"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4550230Z       ^[[32m+^[[0m^[[0m namespace                             = "AWS/EC2"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4550915Z       ^[[32m+^[[0m^[[0m period                                = 300
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4551606Z       ^[[32m+^[[0m^[[0m statistic                             = "Average"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4552280Z       ^[[32m+^[[0m^[[0m tags                                  = {
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4552873Z           ^[[32m+^[[0m^[[0m "Environment" = "prod"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4553468Z           ^[[32m+^[[0m^[[0m "Lab"         = "assignment1"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4554051Z           ^[[32m+^[[0m^[[0m "Project"     = "acs730"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4554532Z         }
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4554993Z       ^[[32m+^[[0m^[[0m tags_all                              = {
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4555587Z           ^[[32m+^[[0m^[[0m "Course"      = "ACS730"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4556378Z           ^[[32m+^[[0m^[[0m "Environment" = "prod"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4556959Z           ^[[32m+^[[0m^[[0m "Lab"         = "assignment1"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4557527Z           ^[[32m+^[[0m^[[0m "Project"     = "acs730"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4557994Z         }
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4558466Z       ^[[32m+^[[0m^[[0m threshold                             = 70
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4559149Z       ^[[32m+^[[0m^[[0m treat_missing_data                    = "missing"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4560308Z     }
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4560511Z 
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4567619Z ^[[1m  # module.web.aws_cloudwatch_metric_alarm.cpu_high[1]^[[0m will be created
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4568841Z ^[[0m  ^[[32m+^[[0m^[[0m resource "aws_cloudwatch_metric_alarm" "cpu_high" {
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4569575Z       ^[[32m+^[[0m^[[0m actions_enabled                       = true
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4570480Z       ^[[32m+^[[0m^[[0m alarm_description                     = "Average CPU above 70% for two 5-minute periods"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4571467Z       ^[[32m+^[[0m^[[0m alarm_name                            = "acs730-a1-prod-cpu-high-1"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4572262Z       ^[[32m+^[[0m^[[0m arn                                   = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4573050Z       ^[[32m+^[[0m^[[0m comparison_operator                   = "GreaterThanThreshold"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4573568Z       ^[[32m+^[[0m^[[0m dimensions                            = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4574071Z       ^[[32m+^[[0m^[[0m evaluate_low_sample_count_percentiles = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4574543Z       ^[[32m+^[[0m^[[0m evaluation_periods                    = 2
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4574983Z       ^[[32m+^[[0m^[[0m id                                    = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4575448Z       ^[[32m+^[[0m^[[0m metric_name                           = "CPUUtilization"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4575952Z       ^[[32m+^[[0m^[[0m namespace                             = "AWS/EC2"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4576848Z       ^[[32m+^[[0m^[[0m period                                = 300
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4577546Z       ^[[32m+^[[0m^[[0m statistic                             = "Average"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4578231Z       ^[[32m+^[[0m^[[0m tags                                  = {
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4578851Z           ^[[32m+^[[0m^[[0m "Environment" = "prod"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4579273Z           ^[[32m+^[[0m^[[0m "Lab"         = "assignment1"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4579646Z           ^[[32m+^[[0m^[[0m "Project"     = "acs730"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4579977Z         }
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4580277Z       ^[[32m+^[[0m^[[0m tags_all                              = {
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4580652Z           ^[[32m+^[[0m^[[0m "Course"      = "ACS730"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4580994Z           ^[[32m+^[[0m^[[0m "Environment" = "prod"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4581345Z           ^[[32m+^[[0m^[[0m "Lab"         = "assignment1"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4581702Z           ^[[32m+^[[0m^[[0m "Project"     = "acs730"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4581968Z         }
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4582258Z       ^[[32m+^[[0m^[[0m threshold                             = 70
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4582692Z       ^[[32m+^[[0m^[[0m treat_missing_data                    = "missing"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4583021Z     }
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4583139Z 
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4583335Z ^[[1m  # module.web.aws_instance.web[0]^[[0m will be created
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4583748Z ^[[0m  ^[[32m+^[[0m^[[0m resource "aws_instance" "web" {
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4584189Z       ^[[32m+^[[0m^[[0m ami                                  = "ami-062caee4b7b602eb0"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4584754Z       ^[[32m+^[[0m^[[0m arn                                  = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4585282Z       ^[[32m+^[[0m^[[0m associate_public_ip_address          = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4585775Z       ^[[32m+^[[0m^[[0m availability_zone                    = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4586521Z       ^[[32m+^[[0m^[[0m cpu_core_count                       = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4587001Z       ^[[32m+^[[0m^[[0m cpu_threads_per_core                 = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4587470Z       ^[[32m+^[[0m^[[0m disable_api_stop                     = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4587952Z       ^[[32m+^[[0m^[[0m disable_api_termination              = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4588420Z       ^[[32m+^[[0m^[[0m ebs_optimized                        = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4588908Z       ^[[32m+^[[0m^[[0m enable_primary_ipv6                  = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4589605Z       ^[[32m+^[[0m^[[0m get_password_data                    = false
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4590079Z       ^[[32m+^[[0m^[[0m host_id                              = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4590560Z       ^[[32m+^[[0m^[[0m host_resource_group_arn              = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4591071Z       ^[[32m+^[[0m^[[0m iam_instance_profile                 = "LabInstanceProfile"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4591565Z       ^[[32m+^[[0m^[[0m id                                   = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4592036Z       ^[[32m+^[[0m^[[0m instance_initiated_shutdown_behavior = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4592548Z       ^[[32m+^[[0m^[[0m instance_lifecycle                   = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4593039Z       ^[[32m+^[[0m^[[0m instance_state                       = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4593623Z       ^[[32m+^[[0m^[[0m instance_type                        = "t3.micro"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4594098Z       ^[[32m+^[[0m^[[0m ipv6_address_count                   = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4594574Z       ^[[32m+^[[0m^[[0m ipv6_addresses                       = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4595026Z       ^[[32m+^[[0m^[[0m key_name                             = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4595514Z       ^[[32m+^[[0m^[[0m monitoring                           = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4596397Z       ^[[32m+^[[0m^[[0m outpost_arn                          = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4597002Z       ^[[32m+^[[0m^[[0m password_data                        = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4597524Z       ^[[32m+^[[0m^[[0m placement_group                      = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4598025Z       ^[[32m+^[[0m^[[0m placement_partition_number           = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4598520Z       ^[[32m+^[[0m^[[0m primary_network_interface_id         = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4599016Z       ^[[32m+^[[0m^[[0m private_dns                          = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4599471Z       ^[[32m+^[[0m^[[0m private_ip                           = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4599952Z       ^[[32m+^[[0m^[[0m public_dns                           = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4600397Z       ^[[32m+^[[0m^[[0m public_ip                            = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4600863Z       ^[[32m+^[[0m^[[0m secondary_private_ips                = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4601353Z       ^[[32m+^[[0m^[[0m security_groups                      = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4601806Z       ^[[32m+^[[0m^[[0m source_dest_check                    = true
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4602273Z       ^[[32m+^[[0m^[[0m spot_instance_request_id             = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4602770Z       ^[[32m+^[[0m^[[0m subnet_id                            = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4603206Z       ^[[32m+^[[0m^[[0m tags                                 = {
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4603577Z           ^[[32m+^[[0m^[[0m "Environment" = "prod"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4603944Z           ^[[32m+^[[0m^[[0m "Lab"         = "assignment1"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4604337Z           ^[[32m+^[[0m^[[0m "Name"        = "acs730-a1-prod-web-0"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4604708Z           ^[[32m+^[[0m^[[0m "Project"     = "acs730"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4604995Z         }
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4605279Z       ^[[32m+^[[0m^[[0m tags_all                             = {
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4605630Z           ^[[32m+^[[0m^[[0m "Course"      = "ACS730"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4605965Z           ^[[32m+^[[0m^[[0m "Environment" = "prod"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4606574Z           ^[[32m+^[[0m^[[0m "Lab"         = "assignment1"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4606947Z           ^[[32m+^[[0m^[[0m "Name"        = "acs730-a1-prod-web-0"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4607307Z           ^[[32m+^[[0m^[[0m "Project"     = "acs730"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4607577Z         }
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4607906Z       ^[[32m+^[[0m^[[0m tenancy                              = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4608363Z       ^[[32m+^[[0m^[[0m user_data                            = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4609094Z       ^[[32m+^[[0m^[[0m user_data_base64                     = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4609543Z       ^[[32m+^[[0m^[[0m user_data_replace_on_change          = false
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4610010Z       ^[[32m+^[[0m^[[0m vpc_security_group_ids               = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4610279Z 
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4610519Z       ^[[32m+^[[0m^[[0m capacity_reservation_specification (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4610796Z 
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4610958Z       ^[[32m+^[[0m^[[0m cpu_options (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4611170Z 
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4611351Z       ^[[32m+^[[0m^[[0m ebs_block_device (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4611563Z 
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4611743Z       ^[[32m+^[[0m^[[0m enclave_options (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4612095Z 
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4612280Z       ^[[32m+^[[0m^[[0m ephemeral_block_device (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4612516Z 
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4612710Z       ^[[32m+^[[0m^[[0m instance_market_options (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4612947Z 
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4613137Z       ^[[32m+^[[0m^[[0m maintenance_options (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4613363Z 
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4613586Z       ^[[32m+^[[0m^[[0m metadata_options (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4613904Z 
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4614087Z       ^[[32m+^[[0m^[[0m network_interface (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4614379Z 
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4614679Z       ^[[32m+^[[0m^[[0m private_dns_name_options (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4615058Z 
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4615347Z       ^[[32m+^[[0m^[[0m root_block_device (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4615835Z     }
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4616161Z 
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4616455Z ^[[1m  # module.web.aws_instance.web[1]^[[0m will be created
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4617093Z ^[[0m  ^[[32m+^[[0m^[[0m resource "aws_instance" "web" {
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4617812Z       ^[[32m+^[[0m^[[0m ami                                  = "ami-062caee4b7b602eb0"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4618566Z       ^[[32m+^[[0m^[[0m arn                                  = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4619359Z       ^[[32m+^[[0m^[[0m associate_public_ip_address          = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4620183Z       ^[[32m+^[[0m^[[0m availability_zone                    = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4620998Z       ^[[32m+^[[0m^[[0m cpu_core_count                       = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4621793Z       ^[[32m+^[[0m^[[0m cpu_threads_per_core                 = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4622590Z       ^[[32m+^[[0m^[[0m disable_api_stop                     = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4623417Z       ^[[32m+^[[0m^[[0m disable_api_termination              = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4624238Z       ^[[32m+^[[0m^[[0m ebs_optimized                        = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4625049Z       ^[[32m+^[[0m^[[0m enable_primary_ipv6                  = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4625803Z       ^[[32m+^[[0m^[[0m get_password_data                    = false
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4626746Z       ^[[32m+^[[0m^[[0m host_id                              = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4627542Z       ^[[32m+^[[0m^[[0m host_resource_group_arn              = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4628392Z       ^[[32m+^[[0m^[[0m iam_instance_profile                 = "LabInstanceProfile"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4629180Z       ^[[32m+^[[0m^[[0m id                                   = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4629973Z       ^[[32m+^[[0m^[[0m instance_initiated_shutdown_behavior = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4630804Z       ^[[32m+^[[0m^[[0m instance_lifecycle                   = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4631627Z       ^[[32m+^[[0m^[[0m instance_state                       = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4632383Z       ^[[32m+^[[0m^[[0m instance_type                        = "t3.micro"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4633162Z       ^[[32m+^[[0m^[[0m ipv6_address_count                   = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4633962Z       ^[[32m+^[[0m^[[0m ipv6_addresses                       = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4634996Z       ^[[32m+^[[0m^[[0m key_name                             = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4635782Z       ^[[32m+^[[0m^[[0m monitoring                           = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4636783Z       ^[[32m+^[[0m^[[0m outpost_arn                          = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4637403Z       ^[[32m+^[[0m^[[0m password_data                        = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4637902Z       ^[[32m+^[[0m^[[0m placement_group                      = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4638387Z       ^[[32m+^[[0m^[[0m placement_partition_number           = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4638871Z       ^[[32m+^[[0m^[[0m primary_network_interface_id         = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4639580Z       ^[[32m+^[[0m^[[0m private_dns                          = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4640044Z       ^[[32m+^[[0m^[[0m private_ip                           = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4640501Z       ^[[32m+^[[0m^[[0m public_dns                           = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4640962Z       ^[[32m+^[[0m^[[0m public_ip                            = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4641428Z       ^[[32m+^[[0m^[[0m secondary_private_ips                = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4641906Z       ^[[32m+^[[0m^[[0m security_groups                      = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4642353Z       ^[[32m+^[[0m^[[0m source_dest_check                    = true
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4642811Z       ^[[32m+^[[0m^[[0m spot_instance_request_id             = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4643272Z       ^[[32m+^[[0m^[[0m subnet_id                            = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4643693Z       ^[[32m+^[[0m^[[0m tags                                 = {
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4644073Z           ^[[32m+^[[0m^[[0m "Environment" = "prod"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4644423Z           ^[[32m+^[[0m^[[0m "Lab"         = "assignment1"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4667134Z           ^[[32m+^[[0m^[[0m "Name"        = "acs730-a1-prod-web-1"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4667742Z           ^[[32m+^[[0m^[[0m "Project"     = "acs730"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4668147Z         }
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4668586Z       ^[[32m+^[[0m^[[0m tags_all                             = {
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4669134Z           ^[[32m+^[[0m^[[0m "Course"      = "ACS730"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4669642Z           ^[[32m+^[[0m^[[0m "Environment" = "prod"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4670171Z           ^[[32m+^[[0m^[[0m "Lab"         = "assignment1"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4670777Z           ^[[32m+^[[0m^[[0m "Name"        = "acs730-a1-prod-web-1"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4671362Z           ^[[32m+^[[0m^[[0m "Project"     = "acs730"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4671780Z         }
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4672310Z       ^[[32m+^[[0m^[[0m tenancy                              = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4673126Z       ^[[32m+^[[0m^[[0m user_data                            = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4673902Z       ^[[32m+^[[0m^[[0m user_data_base64                     = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4674718Z       ^[[32m+^[[0m^[[0m user_data_replace_on_change          = false
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4675507Z       ^[[32m+^[[0m^[[0m vpc_security_group_ids               = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4676182Z 
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4676586Z       ^[[32m+^[[0m^[[0m capacity_reservation_specification (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4677051Z 
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4677332Z       ^[[32m+^[[0m^[[0m cpu_options (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4677702Z 
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4677994Z       ^[[32m+^[[0m^[[0m ebs_block_device (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4678379Z 
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4678668Z       ^[[32m+^[[0m^[[0m enclave_options (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4679024Z 
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4679356Z       ^[[32m+^[[0m^[[0m ephemeral_block_device (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4679878Z 
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4680216Z       ^[[32m+^[[0m^[[0m instance_market_options (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4680626Z 
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4681287Z       ^[[32m+^[[0m^[[0m maintenance_options (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4681656Z 
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4681952Z       ^[[32m+^[[0m^[[0m metadata_options (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4682301Z 
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4682606Z       ^[[32m+^[[0m^[[0m network_interface (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4682987Z 
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4683343Z       ^[[32m+^[[0m^[[0m private_dns_name_options (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4683753Z 
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4684068Z       ^[[32m+^[[0m^[[0m root_block_device (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4684557Z     }
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4684739Z 
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4685079Z ^[[1m  # module.web.aws_security_group.web^[[0m will be created
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4685786Z ^[[0m  ^[[32m+^[[0m^[[0m resource "aws_security_group" "web" {
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4686986Z       ^[[32m+^[[0m^[[0m arn                    = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4687921Z       ^[[32m+^[[0m^[[0m description            = "ACS730 Assignment 1 prod web servers - port 80 in, nothing else"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4688826Z       ^[[32m+^[[0m^[[0m egress                 = [
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4689307Z           ^[[32m+^[[0m^[[0m {
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4689622Z               ^[[32m+^[[0m^[[0m cidr_blocks      = [
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4689985Z                   ^[[32m+^[[0m^[[0m "0.0.0.0/0",
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4690265Z                 ]
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4690537Z               ^[[32m+^[[0m^[[0m from_port        = 0
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4691065Z               ^[[32m+^[[0m^[[0m ipv6_cidr_blocks = []
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4691474Z               ^[[32m+^[[0m^[[0m prefix_list_ids  = []
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4691954Z               ^[[32m+^[[0m^[[0m protocol         = "-1"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4692341Z               ^[[32m+^[[0m^[[0m security_groups  = []
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4692787Z               ^[[32m+^[[0m^[[0m self             = false
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4693167Z               ^[[32m+^[[0m^[[0m to_port          = 0
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4693663Z                 ^[[90m# (1 unchanged attribute hidden)^[[0m^[[0m
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4694001Z             },
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4694210Z         ]
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4694628Z       ^[[32m+^[[0m^[[0m id                     = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4695005Z       ^[[32m+^[[0m^[[0m ingress                = [
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4695453Z           ^[[32m+^[[0m^[[0m {
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4695763Z               ^[[32m+^[[0m^[[0m cidr_blocks      = [
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4696354Z                   ^[[32m+^[[0m^[[0m "0.0.0.0/0",
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4696628Z                 ]
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4697031Z               ^[[32m+^[[0m^[[0m from_port        = 80
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4697376Z               ^[[32m+^[[0m^[[0m ipv6_cidr_blocks = []
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4697840Z               ^[[32m+^[[0m^[[0m prefix_list_ids  = []
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4698195Z               ^[[32m+^[[0m^[[0m protocol         = "tcp"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4698675Z               ^[[32m+^[[0m^[[0m security_groups  = []
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4699025Z               ^[[32m+^[[0m^[[0m self             = false
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4699467Z               ^[[32m+^[[0m^[[0m to_port          = 80
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4699855Z                 ^[[90m# (1 unchanged attribute hidden)^[[0m^[[0m
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4700261Z             },
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4700479Z         ]
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4700804Z       ^[[32m+^[[0m^[[0m name                   = "acs730-a1-prod-sg"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4701358Z       ^[[32m+^[[0m^[[0m name_prefix            = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4701875Z       ^[[32m+^[[0m^[[0m owner_id               = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4702274Z       ^[[32m+^[[0m^[[0m revoke_rules_on_delete = false
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4702729Z       ^[[32m+^[[0m^[[0m tags                   = {
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4703074Z           ^[[32m+^[[0m^[[0m "Environment" = "prod"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4703533Z           ^[[32m+^[[0m^[[0m "Lab"         = "assignment1"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4703929Z           ^[[32m+^[[0m^[[0m "Name"        = "acs730-a1-prod-sg"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4704403Z           ^[[32m+^[[0m^[[0m "Project"     = "acs730"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4704691Z         }
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4705281Z       ^[[32m+^[[0m^[[0m tags_all               = {
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4705634Z           ^[[32m+^[[0m^[[0m "Course"      = "ACS730"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4706263Z           ^[[32m+^[[0m^[[0m "Environment" = "prod"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4706690Z           ^[[32m+^[[0m^[[0m "Lab"         = "assignment1"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4707116Z           ^[[32m+^[[0m^[[0m "Name"        = "acs730-a1-prod-sg"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4707590Z           ^[[32m+^[[0m^[[0m "Project"     = "acs730"
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4707879Z         }
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4708224Z       ^[[32m+^[[0m^[[0m vpc_id                 = (known after apply)
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4708635Z     }
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4708747Z 
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4708930Z ^[[1mPlan:^[[0m 5 to add, 0 to change, 0 to destroy.
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4709342Z ^[[0m
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4709563Z Changes to Outputs:
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4710109Z   ^[[32m+^[[0m^[[0m alarm_names        = [
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4710470Z       ^[[32m+^[[0m^[[0m "acs730-a1-prod-cpu-high-0",
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4710956Z       ^[[32m+^[[0m^[[0m "acs730-a1-prod-cpu-high-1",
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4711255Z     ]
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4711569Z   ^[[32m+^[[0m^[[0m db_password_length = 21
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4711948Z   ^[[32m+^[[0m^[[0m instance_ids       = [
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4712277Z       ^[[32m+^[[0m^[[0m (known after apply),
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4712715Z       ^[[32m+^[[0m^[[0m (known after apply),
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4712978Z     ]
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4713320Z   ^[[32m+^[[0m^[[0m public_ips         = [
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4713635Z       ^[[32m+^[[0m^[[0m (known after apply),
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4713975Z       ^[[32m+^[[0m^[[0m (known after apply),
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.4714321Z     ]
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:32.8587512Z ^[[0m^[[1mmodule.web.aws_security_group.web: Creating...^[[0m^[[0m
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:35.4704232Z ^[[0m^[[1mmodule.web.aws_security_group.web: Creation complete after 2s [id=sg-0fc3bf9bd827d8d7c]^[[0m
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:35.4787254Z ^[[0m^[[1mmodule.web.aws_instance.web[0]: Creating...^[[0m^[[0m
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:35.4796751Z ^[[0m^[[1mmodule.web.aws_instance.web[1]: Creating...^[[0m^[[0m
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:45.4810560Z ^[[0m^[[1mmodule.web.aws_instance.web[0]: Still creating... [10s elapsed]^[[0m^[[0m
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:45.4811308Z ^[[0m^[[1mmodule.web.aws_instance.web[1]: Still creating... [10s elapsed]^[[0m^[[0m
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:48.4480705Z ^[[0m^[[1mmodule.web.aws_instance.web[1]: Creation complete after 13s [id=i-0e7ea54b939e1a248]^[[0m
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:48.4689770Z ^[[0m^[[1mmodule.web.aws_instance.web[0]: Creation complete after 13s [id=i-03ceae7e328827d5f]^[[0m
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:48.4731145Z ^[[0m^[[1mmodule.web.aws_cloudwatch_metric_alarm.cpu_high[1]: Creating...^[[0m^[[0m
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:48.4744576Z ^[[0m^[[1mmodule.web.aws_cloudwatch_metric_alarm.cpu_high[0]: Creating...^[[0m^[[0m
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:48.7937391Z ^[[0m^[[1mmodule.web.aws_cloudwatch_metric_alarm.cpu_high[0]: Creation complete after 1s [id=acs730-a1-prod-cpu-high-0]^[[0m
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:48.8027346Z ^[[0m^[[1mmodule.web.aws_cloudwatch_metric_alarm.cpu_high[1]: Creation complete after 1s [id=acs730-a1-prod-cpu-high-1]^[[0m
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:49.0790534Z ^[[0m^[[1m^[[32m
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:49.0791084Z Apply complete! Resources: 5 added, 0 changed, 0 destroyed.
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:49.0791607Z ^[[0m^[[0m^[[1m^[[32m
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:49.0791897Z Outputs:
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:49.0792043Z 
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:49.0792201Z ^[[0malarm_names = [
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:49.0792520Z   "acs730-a1-prod-cpu-high-0",
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:49.0792916Z   "acs730-a1-prod-cpu-high-1",
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:49.0793281Z ]
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:49.0793568Z db_password_length = 21
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:49.0793918Z instance_ids = [
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:49.0794251Z   "i-03ceae7e328827d5f",
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:49.0794611Z   "i-0e7ea54b939e1a248",
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:49.0794941Z ]
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:49.0795240Z public_ips = [
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:49.0795541Z   "34.227.223.152",
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:49.0795847Z   "100.27.217.154",
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:49.0796478Z ]
+prod	Post Run aws-actions/configure-aws-credentials@v4	﻿2026-11-25T15:14:49.1062643Z Post job cleanup.
+prod	Post Run actions/checkout@v4	﻿2026-11-25T15:14:49.2262296Z Post job cleanup.
+prod	Post Run actions/checkout@v4	2026-11-25T15:14:49.3185850Z [command]/usr/bin/git version
+prod	Post Run actions/checkout@v4	2026-11-25T15:14:49.3232273Z git version 2.56.1
+prod	Post Run actions/checkout@v4	2026-11-25T15:14:49.3274040Z Temporarily overriding HOME='/home/runner/work/_temp/164ddf0a-19be-40dd-86e2-d7bcbdba1359' before making global git config changes
+prod	Post Run actions/checkout@v4	2026-11-25T15:14:49.3275389Z Adding repository directory to the temporary git global config as a safe directory
+prod	Post Run actions/checkout@v4	2026-11-25T15:14:49.3279866Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/acs730-labs/acs730-labs
+prod	Post Run actions/checkout@v4	2026-11-25T15:14:49.3322464Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+prod	Post Run actions/checkout@v4	2026-11-25T15:14:49.3360926Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+prod	Post Run actions/checkout@v4	2026-11-25T15:14:49.3690281Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+prod	Post Run actions/checkout@v4	2026-11-25T15:14:49.3719771Z http.https://github.com/.extraheader
+prod	Post Run actions/checkout@v4	2026-11-25T15:14:49.3730930Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+prod	Post Run actions/checkout@v4	2026-11-25T15:14:49.3770381Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+prod	Post Run actions/checkout@v4	2026-11-25T15:14:49.4184095Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+prod	Post Run actions/checkout@v4	2026-11-25T15:14:49.4233999Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+prod	Complete job	﻿2026-11-25T15:14:49.4736481Z Cleaning up orphan processes
+prod	Complete job	2026-11-25T15:14:49.5130988Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, aws-actions/configure-aws-credentials@v4, hashicorp/setup-terraform@v3. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

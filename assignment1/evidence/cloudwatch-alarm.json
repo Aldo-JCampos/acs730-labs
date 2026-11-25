@@ -1,0 +1,122 @@
+{
+    "MetricAlarms": [
+        {
+            "AlarmName": "acs730-a1-dev-cpu-high-0",
+            "AlarmArn": "arn:aws:cloudwatch:us-east-1:615313524491:alarm:acs730-a1-dev-cpu-high-0",
+            "AlarmDescription": "Average CPU above 70% for two 5-minute periods",
+            "AlarmConfigurationUpdatedTimestamp": "2026-11-25T12:34:55.400000+00:00",
+            "ActionsEnabled": true,
+            "OKActions": [],
+            "AlarmActions": [],
+            "InsufficientDataActions": [],
+            "StateValue": "OK",
+            "StateReason": "Threshold Crossed: 1 datapoint [0.0045525755664725 (25/11/26 12:31:00)] was not greater than the threshold (70.0).",
+            "StateReasonData": "{\"version\":\"1.0\",\"queryDate\":\"2026-11-25T12:36:37.057+0000\",\"startDate\":\"2026-11-25T12:31:00.000+0000\",\"statistic\":\"Average\",\"period\":300,\"recentDatapoints\":[0.0045525755664725],\"threshold\":70.0,\"evaluatedDatapoints\":[{\"timestamp\":\"2026-11-25T12:31:00.000+0000\",\"sampleCount\":1.0,\"value\":0.0045525755664725}]}",
+            "StateUpdatedTimestamp": "2026-11-25T12:36:37.059000+00:00",
+            "MetricName": "CPUUtilization",
+            "Namespace": "AWS/EC2",
+            "Statistic": "Average",
+            "Dimensions": [
+                {
+                    "Name": "InstanceId",
+                    "Value": "i-03e23353ce91239c3"
+                }
+            ],
+            "Period": 300,
+            "EvaluationPeriods": 2,
+            "Threshold": 70.0,
+            "ComparisonOperator": "GreaterThanThreshold",
+            "TreatMissingData": "missing",
+            "StateTransitionedTimestamp": "2026-11-25T12:36:37.059000+00:00"
+        },
+        {
+            "AlarmName": "acs730-a1-prod-cpu-high-0",
+            "AlarmArn": "arn:aws:cloudwatch:us-east-1:615313524491:alarm:acs730-a1-prod-cpu-high-0",
+            "AlarmDescription": "Average CPU above 70% for two 5-minute periods",
+            "AlarmConfigurationUpdatedTimestamp": "2026-11-25T15:14:48.634000+00:00",
+            "ActionsEnabled": true,
+            "OKActions": [],
+            "AlarmActions": [],
+            "InsufficientDataActions": [],
+            "StateValue": "OK",
+            "StateReason": "Threshold Crossed: 1 datapoint [0.0035651222557054 (25/11/26 15:11:00)] was not greater than the threshold (70.0).",
+            "StateReasonData": "{\"version\":\"1.0\",\"queryDate\":\"2026-11-25T15:16:15.712+0000\",\"startDate\":\"2026-11-25T15:11:00.000+0000\",\"statistic\":\"Average\",\"period\":300,\"recentDatapoints\":[0.0035651222557054],\"threshold\":70.0,\"evaluatedDatapoints\":[{\"timestamp\":\"2026-11-25T15:11:00.000+0000\",\"sampleCount\":1.0,\"value\":0.0035651222557054}]}",
+            "StateUpdatedTimestamp": "2026-11-25T15:16:15.714000+00:00",
+            "MetricName": "CPUUtilization",
+            "Namespace": "AWS/EC2",
+            "Statistic": "Average",
+            "Dimensions": [
+                {
+                    "Name": "InstanceId",
+                    "Value": "i-03ceae7e328827d5f"
+                }
+            ],
+            "Period": 300,
+            "EvaluationPeriods": 2,
+            "Threshold": 70.0,
+            "ComparisonOperator": "GreaterThanThreshold",
+            "TreatMissingData": "missing",
+            "StateTransitionedTimestamp": "2026-11-25T15:16:15.714000+00:00"
+        },
+        {
+            "AlarmName": "acs730-a1-prod-cpu-high-1",
+            "AlarmArn": "arn:aws:cloudwatch:us-east-1:615313524491:alarm:acs730-a1-prod-cpu-high-1",
+            "AlarmDescription": "Average CPU above 70% for two 5-minute periods",
+            "AlarmConfigurationUpdatedTimestamp": "2026-11-25T15:14:48.651000+00:00",
+            "ActionsEnabled": true,
+            "OKActions": [],
+            "AlarmActions": [],
+            "InsufficientDataActions": [],
+            "StateValue": "OK",
+            "StateReason": "Threshold Crossed: 1 datapoint [0.0044061290534859 (25/11/26 15:11:00)] was not greater than the threshold (70.0).",
+            "StateReasonData": "{\"version\":\"1.0\",\"queryDate\":\"2026-11-25T15:16:29.304+0000\",\"startDate\":\"2026-11-25T15:11:00.000+0000\",\"statistic\":\"Average\",\"period\":300,\"recentDatapoints\":[0.0044061290534859],\"threshold\":70.0,\"evaluatedDatapoints\":[{\"timestamp\":\"2026-11-25T15:11:00.000+0000\",\"sampleCount\":1.0,\"value\":0.0044061290534859}]}",
+            "StateUpdatedTimestamp": "2026-11-25T15:16:29.305000+00:00",
+            "MetricName": "CPUUtilization",
+            "Namespace": "AWS/EC2",
+            "Statistic": "Average",
+            "Dimensions": [
+                {
+                    "Name": "InstanceId",
+                    "Value": "i-0e7ea54b939e1a248"
+                }
+            ],
+            "Period": 300,
+            "EvaluationPeriods": 2,
+            "Threshold": 70.0,
+            "ComparisonOperator": "GreaterThanThreshold",
+            "TreatMissingData": "missing",
+            "StateTransitionedTimestamp": "2026-11-25T15:16:29.305000+00:00"
+        },
+        {
+            "AlarmName": "acs730-a1-staging-cpu-high-0",
+            "AlarmArn": "arn:aws:cloudwatch:us-east-1:615313524491:alarm:acs730-a1-staging-cpu-high-0",
+            "AlarmDescription": "Average CPU above 70% for two 5-minute periods",
+            "AlarmConfigurationUpdatedTimestamp": "2026-11-25T15:09:12.517000+00:00",
+            "ActionsEnabled": true,
+            "OKActions": [],
+            "AlarmActions": [],
+            "InsufficientDataActions": [],
+            "StateValue": "OK",
+            "StateReason": "Threshold Crossed: 1 datapoint [0.0042429683656020995 (25/11/26 15:05:00)] was not greater than the threshold (70.0).",
+            "StateReasonData": "{\"version\":\"1.0\",\"queryDate\":\"2026-11-25T15:10:53.120+0000\",\"startDate\":\"2026-11-25T15:05:00.000+0000\",\"statistic\":\"Average\",\"period\":300,\"recentDatapoints\":[0.0042429683656020995],\"threshold\":70.0,\"evaluatedDatapoints\":[{\"timestamp\":\"2026-11-25T15:05:00.000+0000\",\"sampleCount\":1.0,\"value\":0.0042429683656020995}]}",
+            "StateUpdatedTimestamp": "2026-11-25T15:10:53.122000+00:00",
+            "MetricName": "CPUUtilization",
+            "Namespace": "AWS/EC2",
+            "Statistic": "Average",
+            "Dimensions": [
+                {
+                    "Name": "InstanceId",
+                    "Value": "i-0db35da7730388d5e"
+                }
+            ],
+            "Period": 300,
+            "EvaluationPeriods": 2,
+            "Threshold": 70.0,
+            "ComparisonOperator": "GreaterThanThreshold",
+            "TreatMissingData": "missing",
+            "StateTransitionedTimestamp": "2026-11-25T15:10:53.122000+00:00"
+        }
+    ],
+    "CompositeAlarms": [],
+    "LogAlarms": []
+}

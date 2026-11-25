@@ -1,0 +1,728 @@
+staging	Set up job	﻿2026-11-25T15:08:40.4784603Z Current runner version: '2.338.2'
+staging	Set up job	2026-11-25T15:08:40.4803606Z ##[group]Runner Image Provisioner
+staging	Set up job	2026-11-25T15:08:40.4804178Z Hosted Compute Agent
+staging	Set up job	2026-11-25T15:08:40.4804643Z Version: 20261111.635
+staging	Set up job	2026-11-25T15:08:40.4805070Z Commit: b8a594ea514ff44cadb5342986c68b1eac6e22ed
+staging	Set up job	2026-11-25T15:08:40.4805549Z Build Date: 2026-11-11T01:49:01Z
+staging	Set up job	2026-11-25T15:08:40.4806020Z Worker ID: {165aef20-1cef-4dcf-a405-54c60a38146a}
+staging	Set up job	2026-11-25T15:08:40.4806483Z Region: northcentralus
+staging	Set up job	2026-11-25T15:08:40.4806905Z Cloud: Azure
+staging	Set up job	2026-11-25T15:08:40.4807263Z ##[endgroup]
+staging	Set up job	2026-11-25T15:08:40.4808399Z ##[group]Operating System
+staging	Set up job	2026-11-25T15:08:40.4808827Z Ubuntu
+staging	Set up job	2026-11-25T15:08:40.4809155Z 26.04.1
+staging	Set up job	2026-11-25T15:08:40.4809811Z LTS
+staging	Set up job	2026-11-25T15:08:40.4810152Z ##[endgroup]
+staging	Set up job	2026-11-25T15:08:40.4810577Z ##[group]Runner Image
+staging	Set up job	2026-11-25T15:08:40.4810983Z Image: ubuntu-26.04
+staging	Set up job	2026-11-25T15:08:40.4811377Z Version: 20261116.202.1
+staging	Set up job	2026-11-25T15:08:40.4812046Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261116.202/images/ubuntu/Ubuntu2604-Readme.md
+staging	Set up job	2026-11-25T15:08:40.4813168Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261116.202
+staging	Set up job	2026-11-25T15:08:40.4813752Z ##[endgroup]
+staging	Set up job	2026-11-25T15:08:40.4814488Z ##[group]GITHUB_TOKEN Permissions
+staging	Set up job	2026-11-25T15:08:40.4815772Z Contents: read
+staging	Set up job	2026-11-25T15:08:40.4816223Z Metadata: read
+staging	Set up job	2026-11-25T15:08:40.4816601Z ##[endgroup]
+staging	Set up job	2026-11-25T15:08:40.4817948Z Secret source: Actions
+staging	Set up job	2026-11-25T15:08:40.4818539Z Cache mode: write
+staging	Set up job	2026-11-25T15:08:40.4819037Z Prepare workflow directory
+staging	Set up job	2026-11-25T15:08:40.5082977Z Prepare all required actions
+staging	Set up job	2026-11-25T15:08:40.5129013Z Getting action download info
+staging	Set up job	2026-11-25T15:08:40.7345880Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+staging	Set up job	2026-11-25T15:08:40.9135158Z Download action repository 'aws-actions/configure-aws-credentials@v4' (SHA:7474bc4690e29a8392af63c5b98e7449536d5c3a)
+staging	Set up job	2026-11-25T15:08:41.1829478Z Download action repository 'hashicorp/setup-terraform@v3' (SHA:b9cd54a3c349d3f38e8881555d616ced269862dd)
+staging	Set up job	2026-11-25T15:08:41.5178583Z Complete job name: staging
+staging	Run actions/checkout@v4	﻿2026-11-25T15:08:41.5692670Z ##[group]Run actions/checkout@v4
+staging	Run actions/checkout@v4	2026-11-25T15:08:41.5693164Z with:
+staging	Run actions/checkout@v4	2026-11-25T15:08:41.5693455Z   repository: Aldo-JCampos/acs730-labs
+staging	Run actions/checkout@v4	2026-11-25T15:08:41.5695732Z   token: ***
+staging	Run actions/checkout@v4	2026-11-25T15:08:41.5696006Z   ssh-strict: true
+staging	Run actions/checkout@v4	2026-11-25T15:08:41.5696290Z   ssh-user: git
+staging	Run actions/checkout@v4	2026-11-25T15:08:41.5696572Z   persist-credentials: true
+staging	Run actions/checkout@v4	2026-11-25T15:08:41.5696885Z   clean: true
+staging	Run actions/checkout@v4	2026-11-25T15:08:41.5697175Z   sparse-checkout-cone-mode: true
+staging	Run actions/checkout@v4	2026-11-25T15:08:41.5697506Z   fetch-depth: 1
+staging	Run actions/checkout@v4	2026-11-25T15:08:41.5697788Z   fetch-tags: false
+staging	Run actions/checkout@v4	2026-11-25T15:08:41.5698083Z   show-progress: true
+staging	Run actions/checkout@v4	2026-11-25T15:08:41.5698373Z   lfs: false
+staging	Run actions/checkout@v4	2026-11-25T15:08:41.5698640Z   submodules: false
+staging	Run actions/checkout@v4	2026-11-25T15:08:41.5698947Z   set-safe-directory: true
+staging	Run actions/checkout@v4	2026-11-25T15:08:41.5699450Z   allow-unsafe-pr-checkout: false
+staging	Run actions/checkout@v4	2026-11-25T15:08:41.5699862Z env:
+staging	Run actions/checkout@v4	2026-11-25T15:08:41.5700128Z   TF_IN_AUTOMATION: true
+staging	Run actions/checkout@v4	2026-11-25T15:08:41.5700453Z ##[endgroup]
+staging	Run actions/checkout@v4	2026-11-25T15:08:44.8771227Z Syncing repository: Aldo-JCampos/acs730-labs
+staging	Run actions/checkout@v4	2026-11-25T15:08:44.8772278Z ##[group]Getting Git version info
+staging	Run actions/checkout@v4	2026-11-25T15:08:44.8772676Z Working directory is '/home/runner/work/acs730-labs/acs730-labs'
+staging	Run actions/checkout@v4	2026-11-25T15:08:44.8856873Z [command]/usr/bin/git version
+staging	Run actions/checkout@v4	2026-11-25T15:08:44.9016298Z git version 2.56.1
+staging	Run actions/checkout@v4	2026-11-25T15:08:44.9031968Z ##[endgroup]
+staging	Run actions/checkout@v4	2026-11-25T15:08:44.9043470Z Temporarily overriding HOME='/home/runner/work/_temp/532c1f64-30c5-46d3-84f3-001b42dc1e18' before making global git config changes
+staging	Run actions/checkout@v4	2026-11-25T15:08:44.9044326Z Adding repository directory to the temporary git global config as a safe directory
+staging	Run actions/checkout@v4	2026-11-25T15:08:44.9047957Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/acs730-labs/acs730-labs
+staging	Run actions/checkout@v4	2026-11-25T15:08:44.9647251Z Deleting the contents of '/home/runner/work/acs730-labs/acs730-labs'
+staging	Run actions/checkout@v4	2026-11-25T15:08:44.9652288Z ##[group]Initializing the repository
+staging	Run actions/checkout@v4	2026-11-25T15:08:44.9657562Z [command]/usr/bin/git init /home/runner/work/acs730-labs/acs730-labs
+staging	Run actions/checkout@v4	2026-11-25T15:08:45.0145282Z hint: Using 'master' as the name for the initial branch. This default branch name
+staging	Run actions/checkout@v4	2026-11-25T15:08:45.0146702Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+staging	Run actions/checkout@v4	2026-11-25T15:08:45.0147457Z hint: to use in all of your new repositories, which will suppress this warning,
+staging	Run actions/checkout@v4	2026-11-25T15:08:45.0148985Z hint: call:
+staging	Run actions/checkout@v4	2026-11-25T15:08:45.0150523Z hint:
+staging	Run actions/checkout@v4	2026-11-25T15:08:45.0151055Z hint: 	git config --global init.defaultBranch <name>
+staging	Run actions/checkout@v4	2026-11-25T15:08:45.0151821Z hint:
+staging	Run actions/checkout@v4	2026-11-25T15:08:45.0152328Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+staging	Run actions/checkout@v4	2026-11-25T15:08:45.0153265Z hint: 'development'. The just-created branch can be renamed via this command:
+staging	Run actions/checkout@v4	2026-11-25T15:08:45.0154081Z hint:
+staging	Run actions/checkout@v4	2026-11-25T15:08:45.0154529Z hint: 	git branch -m <name>
+staging	Run actions/checkout@v4	2026-11-25T15:08:45.0154996Z hint:
+staging	Run actions/checkout@v4	2026-11-25T15:08:45.0155510Z hint: Disable this message with "git config set advice.defaultBranchName false"
+staging	Run actions/checkout@v4	2026-11-25T15:08:45.0349511Z Initialized empty Git repository in /home/runner/work/acs730-labs/acs730-labs/.git/
+staging	Run actions/checkout@v4	2026-11-25T15:08:45.0375534Z [command]/usr/bin/git remote add origin https://github.com/Aldo-JCampos/acs730-labs
+staging	Run actions/checkout@v4	2026-11-25T15:08:45.0804668Z ##[endgroup]
+staging	Run actions/checkout@v4	2026-11-25T15:08:45.0805041Z ##[group]Disabling automatic garbage collection
+staging	Run actions/checkout@v4	2026-11-25T15:08:45.0807258Z [command]/usr/bin/git config --local gc.auto 0
+staging	Run actions/checkout@v4	2026-11-25T15:08:45.0850790Z ##[endgroup]
+staging	Run actions/checkout@v4	2026-11-25T15:08:45.0851265Z ##[group]Setting up auth
+staging	Run actions/checkout@v4	2026-11-25T15:08:45.0855996Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+staging	Run actions/checkout@v4	2026-11-25T15:08:45.0884035Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+staging	Run actions/checkout@v4	2026-11-25T15:08:45.3718569Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+staging	Run actions/checkout@v4	2026-11-25T15:08:45.3750553Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+staging	Run actions/checkout@v4	2026-11-25T15:08:45.3960255Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+staging	Run actions/checkout@v4	2026-11-25T15:08:45.3987704Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+staging	Run actions/checkout@v4	2026-11-25T15:08:45.4201685Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+staging	Run actions/checkout@v4	2026-11-25T15:08:45.4234386Z ##[endgroup]
+staging	Run actions/checkout@v4	2026-11-25T15:08:45.4234788Z ##[group]Fetching the repository
+staging	Run actions/checkout@v4	2026-11-25T15:08:45.4240757Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +762f0768088e3f24cd5358bfb2195cf9a22731fb:refs/remotes/origin/main
+staging	Run actions/checkout@v4	2026-11-25T15:08:46.1670479Z From https://github.com/Aldo-JCampos/acs730-labs
+staging	Run actions/checkout@v4	2026-11-25T15:08:46.1670897Z  * [new ref]         762f0768088e3f24cd5358bfb2195cf9a22731fb -> origin/main
+staging	Run actions/checkout@v4	2026-11-25T15:08:46.1675259Z ##[endgroup]
+staging	Run actions/checkout@v4	2026-11-25T15:08:46.1675716Z ##[group]Determining the checkout info
+staging	Run actions/checkout@v4	2026-11-25T15:08:46.1677319Z ##[endgroup]
+staging	Run actions/checkout@v4	2026-11-25T15:08:46.1682800Z [command]/usr/bin/git sparse-checkout disable
+staging	Run actions/checkout@v4	2026-11-25T15:08:46.1930653Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+staging	Run actions/checkout@v4	2026-11-25T15:08:46.1965388Z ##[group]Checking out the ref
+staging	Run actions/checkout@v4	2026-11-25T15:08:46.1969011Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+staging	Run actions/checkout@v4	2026-11-25T15:08:46.2849651Z Switched to a new branch 'main'
+staging	Run actions/checkout@v4	2026-11-25T15:08:46.2910448Z branch 'main' set up to track 'origin/main'.
+staging	Run actions/checkout@v4	2026-11-25T15:08:46.2964549Z ##[endgroup]
+staging	Run actions/checkout@v4	2026-11-25T15:08:46.2967332Z [command]/usr/bin/git log -1 --format=%H
+staging	Run actions/checkout@v4	2026-11-25T15:08:46.2990570Z 762f0768088e3f24cd5358bfb2195cf9a22731fb
+staging	Run aws-actions/configure-aws-credentials@v4	﻿2026-11-25T15:08:46.3359392Z ##[group]Run aws-actions/configure-aws-credentials@v4
+staging	Run aws-actions/configure-aws-credentials@v4	2026-11-25T15:08:46.3359641Z with:
+staging	Run aws-actions/configure-aws-credentials@v4	2026-11-25T15:08:46.3359980Z   aws-access-key-id: ***
+staging	Run aws-actions/configure-aws-credentials@v4	2026-11-25T15:08:46.3360339Z   aws-secret-access-key: ***
+staging	Run aws-actions/configure-aws-credentials@v4	2026-11-25T15:08:46.3362231Z   aws-session-token: ***
+staging	Run aws-actions/configure-aws-credentials@v4	2026-11-25T15:08:46.3362375Z   aws-region: us-east-1
+staging	Run aws-actions/configure-aws-credentials@v4	2026-11-25T15:08:46.3362525Z   audience: sts.amazonaws.com
+staging	Run aws-actions/configure-aws-credentials@v4	2026-11-25T15:08:46.3362712Z   output-env-credentials: true
+staging	Run aws-actions/configure-aws-credentials@v4	2026-11-25T15:08:46.3362885Z env:
+staging	Run aws-actions/configure-aws-credentials@v4	2026-11-25T15:08:46.3363011Z   TF_IN_AUTOMATION: true
+staging	Run aws-actions/configure-aws-credentials@v4	2026-11-25T15:08:46.3363152Z ##[endgroup]
+staging	Run aws-actions/configure-aws-credentials@v4	2026-11-25T15:08:46.8333380Z Proceeding with IAM user credentials
+staging	Run hashicorp/setup-terraform@v3	﻿2026-11-25T15:08:46.8547243Z ##[group]Run hashicorp/setup-terraform@v3
+staging	Run hashicorp/setup-terraform@v3	2026-11-25T15:08:46.8547441Z with:
+staging	Run hashicorp/setup-terraform@v3	2026-11-25T15:08:46.8547573Z   terraform_version: 1.10.3
+staging	Run hashicorp/setup-terraform@v3	2026-11-25T15:08:46.8547726Z   terraform_wrapper: false
+staging	Run hashicorp/setup-terraform@v3	2026-11-25T15:08:46.8547900Z   cli_config_credentials_hostname: app.terraform.io
+staging	Run hashicorp/setup-terraform@v3	2026-11-25T15:08:46.8548078Z env:
+staging	Run hashicorp/setup-terraform@v3	2026-11-25T15:08:46.8548200Z   TF_IN_AUTOMATION: true
+staging	Run hashicorp/setup-terraform@v3	2026-11-25T15:08:46.8548344Z   AWS_DEFAULT_REGION: us-east-1
+staging	Run hashicorp/setup-terraform@v3	2026-11-25T15:08:46.8548493Z   AWS_REGION: us-east-1
+staging	Run hashicorp/setup-terraform@v3	2026-11-25T15:08:46.8548764Z   AWS_ACCESS_KEY_ID: ***
+staging	Run hashicorp/setup-terraform@v3	2026-11-25T15:08:46.8548962Z   AWS_SECRET_ACCESS_KEY: ***
+staging	Run hashicorp/setup-terraform@v3	2026-11-25T15:08:46.8551051Z   AWS_SESSION_TOKEN: ***
+staging	Run hashicorp/setup-terraform@v3	2026-11-25T15:08:46.8551188Z ##[endgroup]
+staging	Run hashicorp/setup-terraform@v3	2026-11-25T15:08:47.0985068Z (node:2206) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+staging	Run hashicorp/setup-terraform@v3	2026-11-25T15:08:47.0986368Z (Use `node --trace-deprecation ...` to show where the warning was created)
+staging	Run hashicorp/setup-terraform@v3	2026-11-25T15:08:47.3145089Z [command]/usr/bin/unzip -o -q /home/runner/work/_temp/2af3c00c-2ad9-4967-8a72-ad1d2f61d6e4
+staging	Run terraform -chdir=assignment1/terraform/staging init -input=false	﻿2026-11-25T15:08:47.7966724Z ##[group]Run terraform -chdir=assignment1/terraform/staging init -input=false
+staging	Run terraform -chdir=assignment1/terraform/staging init -input=false	2026-11-25T15:08:47.7967140Z ^[[36;1mterraform -chdir=assignment1/terraform/staging init -input=false^[[0m
+staging	Run terraform -chdir=assignment1/terraform/staging init -input=false	2026-11-25T15:08:47.8000177Z shell: /usr/bin/bash -e {0}
+staging	Run terraform -chdir=assignment1/terraform/staging init -input=false	2026-11-25T15:08:47.8000348Z env:
+staging	Run terraform -chdir=assignment1/terraform/staging init -input=false	2026-11-25T15:08:47.8000484Z   TF_IN_AUTOMATION: true
+staging	Run terraform -chdir=assignment1/terraform/staging init -input=false	2026-11-25T15:08:47.8000656Z   AWS_DEFAULT_REGION: us-east-1
+staging	Run terraform -chdir=assignment1/terraform/staging init -input=false	2026-11-25T15:08:47.8000802Z   AWS_REGION: us-east-1
+staging	Run terraform -chdir=assignment1/terraform/staging init -input=false	2026-11-25T15:08:47.8001069Z   AWS_ACCESS_KEY_ID: ***
+staging	Run terraform -chdir=assignment1/terraform/staging init -input=false	2026-11-25T15:08:47.8001274Z   AWS_SECRET_ACCESS_KEY: ***
+staging	Run terraform -chdir=assignment1/terraform/staging init -input=false	2026-11-25T15:08:47.8003149Z   AWS_SESSION_TOKEN: ***
+staging	Run terraform -chdir=assignment1/terraform/staging init -input=false	2026-11-25T15:08:47.8003281Z ##[endgroup]
+staging	Run terraform -chdir=assignment1/terraform/staging init -input=false	2026-11-25T15:08:47.8442109Z ^[[0m^[[1mInitializing the backend...^[[0m
+staging	Run terraform -chdir=assignment1/terraform/staging init -input=false	2026-11-25T15:08:48.0918265Z ^[[0m^[[32m
+staging	Run terraform -chdir=assignment1/terraform/staging init -input=false	2026-11-25T15:08:48.0918518Z Successfully configured the backend "s3"! Terraform will automatically
+staging	Run terraform -chdir=assignment1/terraform/staging init -input=false	2026-11-25T15:08:48.0918896Z use this backend unless the backend configuration changes.^[[0m
+staging	Run terraform -chdir=assignment1/terraform/staging init -input=false	2026-11-25T15:08:48.1565658Z ^[[0m^[[1mInitializing modules...^[[0m
+staging	Run terraform -chdir=assignment1/terraform/staging init -input=false	2026-11-25T15:08:48.1574575Z - web in ../modules/web
+staging	Run terraform -chdir=assignment1/terraform/staging init -input=false	2026-11-25T15:08:48.1579609Z ^[[0m^[[1mInitializing provider plugins...^[[0m
+staging	Run terraform -chdir=assignment1/terraform/staging init -input=false	2026-11-25T15:08:48.1580080Z - Reusing previous version of hashicorp/aws from the dependency lock file
+staging	Run terraform -chdir=assignment1/terraform/staging init -input=false	2026-11-25T15:08:48.2971397Z - Installing hashicorp/aws v5.100.0...
+staging	Run terraform -chdir=assignment1/terraform/staging init -input=false	2026-11-25T15:08:53.0870444Z - Installed hashicorp/aws v5.100.0 (signed by HashiCorp)
+staging	Run terraform -chdir=assignment1/terraform/staging init -input=false	2026-11-25T15:08:53.0870921Z 
+staging	Run terraform -chdir=assignment1/terraform/staging init -input=false	2026-11-25T15:08:53.0890360Z ^[[0m^[[1m^[[32mTerraform has been successfully initialized!^[[0m^[[32m^[[0m
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	﻿2026-11-25T15:08:53.0946909Z ##[group]Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:53.0947509Z ^[[36;1mterraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve^[[0m
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:53.0978799Z shell: /usr/bin/bash -e {0}
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:53.0978956Z env:
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:53.0979081Z   TF_IN_AUTOMATION: true
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:53.0979232Z   AWS_DEFAULT_REGION: us-east-1
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:53.0979512Z   AWS_REGION: us-east-1
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:53.0979927Z   AWS_ACCESS_KEY_ID: ***
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:53.0980126Z   AWS_SECRET_ACCESS_KEY: ***
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:53.0982001Z   AWS_SESSION_TOKEN: ***
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:53.0982140Z ##[endgroup]
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:55.3005658Z ^[[0m^[[1mmodule.web.data.aws_ssm_parameter.db_password: Reading...^[[0m^[[0m
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:55.3010088Z ^[[0m^[[1mmodule.web.data.aws_ami.al2023: Reading...^[[0m^[[0m
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:55.4700585Z ^[[0m^[[1mmodule.web.data.aws_ssm_parameter.db_password: Read complete after 0s [id=/acs730/staging/db_password]^[[0m
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.1168238Z ^[[0m^[[1mmodule.web.data.aws_ami.al2023: Read complete after 1s [id=ami-062caee4b7b602eb0]^[[0m
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2237473Z 
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2238230Z Terraform used the selected providers to generate the following execution
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2238795Z plan. Resource actions are indicated with the following symbols:
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2239503Z   ^[[32m+^[[0m create^[[0m
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2239595Z 
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2239682Z Terraform will perform the following actions:
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2239804Z 
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2240045Z ^[[1m  # module.web.aws_cloudwatch_metric_alarm.cpu_high[0]^[[0m will be created
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2240506Z ^[[0m  ^[[32m+^[[0m^[[0m resource "aws_cloudwatch_metric_alarm" "cpu_high" {
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2240834Z       ^[[32m+^[[0m^[[0m actions_enabled                       = true
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2241187Z       ^[[32m+^[[0m^[[0m alarm_description                     = "Average CPU above 70% for two 5-minute periods"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2241685Z       ^[[32m+^[[0m^[[0m alarm_name                            = "acs730-a1-staging-cpu-high-0"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2242127Z       ^[[32m+^[[0m^[[0m arn                                   = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2242574Z       ^[[32m+^[[0m^[[0m comparison_operator                   = "GreaterThanThreshold"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2243022Z       ^[[32m+^[[0m^[[0m dimensions                            = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2243447Z       ^[[32m+^[[0m^[[0m evaluate_low_sample_count_percentiles = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2243850Z       ^[[32m+^[[0m^[[0m evaluation_periods                    = 2
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2244227Z       ^[[32m+^[[0m^[[0m id                                    = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2244622Z       ^[[32m+^[[0m^[[0m metric_name                           = "CPUUtilization"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2245063Z       ^[[32m+^[[0m^[[0m namespace                             = "AWS/EC2"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2245437Z       ^[[32m+^[[0m^[[0m period                                = 300
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2245809Z       ^[[32m+^[[0m^[[0m statistic                             = "Average"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2246175Z       ^[[32m+^[[0m^[[0m tags                                  = {
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2246500Z           ^[[32m+^[[0m^[[0m "Environment" = "staging"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2246818Z           ^[[32m+^[[0m^[[0m "Lab"         = "assignment1"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2247131Z           ^[[32m+^[[0m^[[0m "Project"     = "acs730"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2247370Z         }
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2247625Z       ^[[32m+^[[0m^[[0m tags_all                              = {
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2247945Z           ^[[32m+^[[0m^[[0m "Course"      = "ACS730"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2248239Z           ^[[32m+^[[0m^[[0m "Environment" = "staging"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2248498Z           ^[[32m+^[[0m^[[0m "Lab"         = "assignment1"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2248701Z           ^[[32m+^[[0m^[[0m "Project"     = "acs730"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2248850Z         }
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2249014Z       ^[[32m+^[[0m^[[0m threshold                             = 70
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2249859Z       ^[[32m+^[[0m^[[0m treat_missing_data                    = "missing"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2250116Z     }
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2250240Z 
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2250372Z ^[[1m  # module.web.aws_instance.web[0]^[[0m will be created
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2250597Z ^[[0m  ^[[32m+^[[0m^[[0m resource "aws_instance" "web" {
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2250845Z       ^[[32m+^[[0m^[[0m ami                                  = "ami-062caee4b7b602eb0"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2251100Z       ^[[32m+^[[0m^[[0m arn                                  = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2251366Z       ^[[32m+^[[0m^[[0m associate_public_ip_address          = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2251646Z       ^[[32m+^[[0m^[[0m availability_zone                    = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2251921Z       ^[[32m+^[[0m^[[0m cpu_core_count                       = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2252305Z       ^[[32m+^[[0m^[[0m cpu_threads_per_core                 = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2252583Z       ^[[32m+^[[0m^[[0m disable_api_stop                     = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2252861Z       ^[[32m+^[[0m^[[0m disable_api_termination              = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2253133Z       ^[[32m+^[[0m^[[0m ebs_optimized                        = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2253403Z       ^[[32m+^[[0m^[[0m enable_primary_ipv6                  = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2253655Z       ^[[32m+^[[0m^[[0m get_password_data                    = false
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2253904Z       ^[[32m+^[[0m^[[0m host_id                              = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2254189Z       ^[[32m+^[[0m^[[0m host_resource_group_arn              = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2254468Z       ^[[32m+^[[0m^[[0m iam_instance_profile                 = "LabInstanceProfile"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2254736Z       ^[[32m+^[[0m^[[0m id                                   = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2255004Z       ^[[32m+^[[0m^[[0m instance_initiated_shutdown_behavior = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2255287Z       ^[[32m+^[[0m^[[0m instance_lifecycle                   = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2255551Z       ^[[32m+^[[0m^[[0m instance_state                       = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2255816Z       ^[[32m+^[[0m^[[0m instance_type                        = "t3.micro"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2256076Z       ^[[32m+^[[0m^[[0m ipv6_address_count                   = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2256343Z       ^[[32m+^[[0m^[[0m ipv6_addresses                       = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2256611Z       ^[[32m+^[[0m^[[0m key_name                             = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2256868Z       ^[[32m+^[[0m^[[0m monitoring                           = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2257129Z       ^[[32m+^[[0m^[[0m outpost_arn                          = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2257400Z       ^[[32m+^[[0m^[[0m password_data                        = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2257669Z       ^[[32m+^[[0m^[[0m placement_group                      = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2257951Z       ^[[32m+^[[0m^[[0m placement_partition_number           = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2258229Z       ^[[32m+^[[0m^[[0m primary_network_interface_id         = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2258497Z       ^[[32m+^[[0m^[[0m private_dns                          = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2258763Z       ^[[32m+^[[0m^[[0m private_ip                           = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2259024Z       ^[[32m+^[[0m^[[0m public_dns                           = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2259430Z       ^[[32m+^[[0m^[[0m public_ip                            = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2259720Z       ^[[32m+^[[0m^[[0m secondary_private_ips                = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2260005Z       ^[[32m+^[[0m^[[0m security_groups                      = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2260254Z       ^[[32m+^[[0m^[[0m source_dest_check                    = true
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2260627Z       ^[[32m+^[[0m^[[0m spot_instance_request_id             = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2260894Z       ^[[32m+^[[0m^[[0m subnet_id                            = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2261131Z       ^[[32m+^[[0m^[[0m tags                                 = {
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2261347Z           ^[[32m+^[[0m^[[0m "Environment" = "staging"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2261552Z           ^[[32m+^[[0m^[[0m "Lab"         = "assignment1"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2261779Z           ^[[32m+^[[0m^[[0m "Name"        = "acs730-a1-staging-web-0"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2261999Z           ^[[32m+^[[0m^[[0m "Project"     = "acs730"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2262153Z         }
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2262314Z       ^[[32m+^[[0m^[[0m tags_all                             = {
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2262521Z           ^[[32m+^[[0m^[[0m "Course"      = "ACS730"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2262842Z           ^[[32m+^[[0m^[[0m "Environment" = "staging"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2263039Z           ^[[32m+^[[0m^[[0m "Lab"         = "assignment1"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2263272Z           ^[[32m+^[[0m^[[0m "Name"        = "acs730-a1-staging-web-0"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2263482Z           ^[[32m+^[[0m^[[0m "Project"     = "acs730"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2263629Z         }
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2263818Z       ^[[32m+^[[0m^[[0m tenancy                              = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2264080Z       ^[[32m+^[[0m^[[0m user_data                            = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2264348Z       ^[[32m+^[[0m^[[0m user_data_base64                     = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2264605Z       ^[[32m+^[[0m^[[0m user_data_replace_on_change          = false
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2264860Z       ^[[32m+^[[0m^[[0m vpc_security_group_ids               = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2265012Z 
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2265141Z       ^[[32m+^[[0m^[[0m capacity_reservation_specification (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2265297Z 
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2265396Z       ^[[32m+^[[0m^[[0m cpu_options (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2265513Z 
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2265628Z       ^[[32m+^[[0m^[[0m ebs_block_device (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2265753Z 
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2265849Z       ^[[32m+^[[0m^[[0m enclave_options (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2265971Z 
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2266082Z       ^[[32m+^[[0m^[[0m ephemeral_block_device (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2266213Z 
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2266320Z       ^[[32m+^[[0m^[[0m instance_market_options (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2266464Z 
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2266573Z       ^[[32m+^[[0m^[[0m maintenance_options (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2266706Z 
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2266802Z       ^[[32m+^[[0m^[[0m metadata_options (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2266927Z 
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2267032Z       ^[[32m+^[[0m^[[0m network_interface (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2267155Z 
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2267268Z       ^[[32m+^[[0m^[[0m private_dns_name_options (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2267404Z 
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2267500Z       ^[[32m+^[[0m^[[0m root_block_device (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2267678Z     }
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2267741Z 
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2267859Z ^[[1m  # module.web.aws_security_group.web^[[0m will be created
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2268094Z ^[[0m  ^[[32m+^[[0m^[[0m resource "aws_security_group" "web" {
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2268324Z       ^[[32m+^[[0m^[[0m arn                    = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2268660Z       ^[[32m+^[[0m^[[0m description            = "ACS730 Assignment 1 staging web servers - port 80 in, nothing else"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2268950Z       ^[[32m+^[[0m^[[0m egress                 = [
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2269132Z           ^[[32m+^[[0m^[[0m {
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2269465Z               ^[[32m+^[[0m^[[0m cidr_blocks      = [
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2269659Z                   ^[[32m+^[[0m^[[0m "0.0.0.0/0",
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2269816Z                 ]
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2269967Z               ^[[32m+^[[0m^[[0m from_port        = 0
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2270154Z               ^[[32m+^[[0m^[[0m ipv6_cidr_blocks = []
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2270461Z               ^[[32m+^[[0m^[[0m prefix_list_ids  = []
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2270681Z               ^[[32m+^[[0m^[[0m protocol         = "-1"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2270875Z               ^[[32m+^[[0m^[[0m security_groups  = []
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2271072Z               ^[[32m+^[[0m^[[0m self             = false
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2271263Z               ^[[32m+^[[0m^[[0m to_port          = 0
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2271474Z                 ^[[90m# (1 unchanged attribute hidden)^[[0m^[[0m
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2271646Z             },
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2271758Z         ]
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2271927Z       ^[[32m+^[[0m^[[0m id                     = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2272137Z       ^[[32m+^[[0m^[[0m ingress                = [
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2272310Z           ^[[32m+^[[0m^[[0m {
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2272473Z               ^[[32m+^[[0m^[[0m cidr_blocks      = [
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2272746Z                   ^[[32m+^[[0m^[[0m "0.0.0.0/0",
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2272897Z                 ]
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2273051Z               ^[[32m+^[[0m^[[0m from_port        = 80
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2273248Z               ^[[32m+^[[0m^[[0m ipv6_cidr_blocks = []
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2273441Z               ^[[32m+^[[0m^[[0m prefix_list_ids  = []
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2273637Z               ^[[32m+^[[0m^[[0m protocol         = "tcp"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2273830Z               ^[[32m+^[[0m^[[0m security_groups  = []
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2274024Z               ^[[32m+^[[0m^[[0m self             = false
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2274210Z               ^[[32m+^[[0m^[[0m to_port          = 80
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2274416Z                 ^[[90m# (1 unchanged attribute hidden)^[[0m^[[0m
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2274585Z             },
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2274696Z         ]
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2274870Z       ^[[32m+^[[0m^[[0m name                   = "acs730-a1-staging-sg"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2275118Z       ^[[32m+^[[0m^[[0m name_prefix            = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2275353Z       ^[[32m+^[[0m^[[0m owner_id               = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2275568Z       ^[[32m+^[[0m^[[0m revoke_rules_on_delete = false
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2275772Z       ^[[32m+^[[0m^[[0m tags                   = {
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2275959Z           ^[[32m+^[[0m^[[0m "Environment" = "staging"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2276155Z           ^[[32m+^[[0m^[[0m "Lab"         = "assignment1"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2276378Z           ^[[32m+^[[0m^[[0m "Name"        = "acs730-a1-staging-sg"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2276582Z           ^[[32m+^[[0m^[[0m "Project"     = "acs730"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2276730Z         }
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2276878Z       ^[[32m+^[[0m^[[0m tags_all               = {
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2277064Z           ^[[32m+^[[0m^[[0m "Course"      = "ACS730"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2277250Z           ^[[32m+^[[0m^[[0m "Environment" = "staging"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2277445Z           ^[[32m+^[[0m^[[0m "Lab"         = "assignment1"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2277666Z           ^[[32m+^[[0m^[[0m "Name"        = "acs730-a1-staging-sg"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2277868Z           ^[[32m+^[[0m^[[0m "Project"     = "acs730"
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2278018Z         }
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2278196Z       ^[[32m+^[[0m^[[0m vpc_id                 = (known after apply)
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2278363Z     }
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2278427Z 
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2278519Z ^[[1mPlan:^[[0m 3 to add, 0 to change, 0 to destroy.
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2278803Z ^[[0m
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2278972Z Changes to Outputs:
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2279206Z   ^[[32m+^[[0m^[[0m alarm_names        = [
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2279605Z       ^[[32m+^[[0m^[[0m "acs730-a1-staging-cpu-high-0",
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2279772Z     ]
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2279915Z   ^[[32m+^[[0m^[[0m db_password_length = 21
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2280097Z   ^[[32m+^[[0m^[[0m instance_ids       = [
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2280278Z       ^[[32m+^[[0m^[[0m (known after apply),
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2280425Z     ]
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2280559Z   ^[[32m+^[[0m^[[0m public_ips         = [
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2280740Z       ^[[32m+^[[0m^[[0m (known after apply),
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.2280886Z     ]
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:56.5540081Z ^[[0m^[[1mmodule.web.aws_security_group.web: Creating...^[[0m^[[0m
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:59.2969883Z ^[[0m^[[1mmodule.web.aws_security_group.web: Creation complete after 2s [id=sg-0e5f33304173fe848]^[[0m
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:59.3017230Z ^[[0m^[[1mmodule.web.aws_instance.web[0]: Creating...^[[0m^[[0m
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:09:09.3027582Z ^[[0m^[[1mmodule.web.aws_instance.web[0]: Still creating... [10s elapsed]^[[0m^[[0m
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:09:12.3110800Z ^[[0m^[[1mmodule.web.aws_instance.web[0]: Creation complete after 13s [id=i-0db35da7730388d5e]^[[0m
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:09:12.3140774Z ^[[0m^[[1mmodule.web.aws_cloudwatch_metric_alarm.cpu_high[0]: Creating...^[[0m^[[0m
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:09:12.6620225Z ^[[0m^[[1mmodule.web.aws_cloudwatch_metric_alarm.cpu_high[0]: Creation complete after 1s [id=acs730-a1-staging-cpu-high-0]^[[0m
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:09:12.9416159Z ^[[0m^[[1m^[[32m
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:09:12.9416572Z Apply complete! Resources: 3 added, 0 changed, 0 destroyed.
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:09:12.9417408Z ^[[0m^[[0m^[[1m^[[32m
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:09:12.9417601Z Outputs:
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:09:12.9417703Z 
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:09:12.9417809Z ^[[0malarm_names = [
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:09:12.9418054Z   "acs730-a1-staging-cpu-high-0",
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:09:12.9418288Z ]
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:09:12.9418466Z db_password_length = 21
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:09:12.9418681Z instance_ids = [
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:09:12.9418888Z   "i-0db35da7730388d5e",
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:09:12.9419090Z ]
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:09:12.9419407Z public_ips = [
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:09:12.9419602Z   "34.224.165.211",
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:09:12.9419784Z ]
+staging	Prod plan (read this before approving)	﻿2026-11-25T15:09:12.9567053Z ##[group]Run terraform -chdir=assignment1/terraform/prod init -input=false
+staging	Prod plan (read this before approving)	2026-11-25T15:09:12.9567414Z ^[[36;1mterraform -chdir=assignment1/terraform/prod init -input=false^[[0m
+staging	Prod plan (read this before approving)	2026-11-25T15:09:12.9567685Z ^[[36;1mterraform -chdir=assignment1/terraform/prod plan -input=false^[[0m
+staging	Prod plan (read this before approving)	2026-11-25T15:09:12.9595718Z shell: /usr/bin/bash -e {0}
+staging	Prod plan (read this before approving)	2026-11-25T15:09:12.9595879Z env:
+staging	Prod plan (read this before approving)	2026-11-25T15:09:12.9596003Z   TF_IN_AUTOMATION: true
+staging	Prod plan (read this before approving)	2026-11-25T15:09:12.9596165Z   AWS_DEFAULT_REGION: us-east-1
+staging	Prod plan (read this before approving)	2026-11-25T15:09:12.9596320Z   AWS_REGION: us-east-1
+staging	Prod plan (read this before approving)	2026-11-25T15:09:12.9596610Z   AWS_ACCESS_KEY_ID: ***
+staging	Prod plan (read this before approving)	2026-11-25T15:09:12.9596812Z   AWS_SECRET_ACCESS_KEY: ***
+staging	Prod plan (read this before approving)	2026-11-25T15:09:12.9598726Z   AWS_SESSION_TOKEN: ***
+staging	Prod plan (read this before approving)	2026-11-25T15:09:12.9598872Z ##[endgroup]
+staging	Prod plan (read this before approving)	2026-11-25T15:09:12.9842542Z ^[[0m^[[1mInitializing the backend...^[[0m
+staging	Prod plan (read this before approving)	2026-11-25T15:09:13.2281487Z ^[[0m^[[32m
+staging	Prod plan (read this before approving)	2026-11-25T15:09:13.2281872Z Successfully configured the backend "s3"! Terraform will automatically
+staging	Prod plan (read this before approving)	2026-11-25T15:09:13.2282292Z use this backend unless the backend configuration changes.^[[0m
+staging	Prod plan (read this before approving)	2026-11-25T15:09:13.2948010Z ^[[0m^[[1mInitializing modules...^[[0m
+staging	Prod plan (read this before approving)	2026-11-25T15:09:13.2956093Z - web in ../modules/web
+staging	Prod plan (read this before approving)	2026-11-25T15:09:13.2963266Z ^[[0m^[[1mInitializing provider plugins...^[[0m
+staging	Prod plan (read this before approving)	2026-11-25T15:09:13.2963909Z - Reusing previous version of hashicorp/aws from the dependency lock file
+staging	Prod plan (read this before approving)	2026-11-25T15:09:13.4074859Z - Installing hashicorp/aws v5.100.0...
+staging	Prod plan (read this before approving)	2026-11-25T15:09:18.1025588Z - Installed hashicorp/aws v5.100.0 (signed by HashiCorp)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:18.1025844Z 
+staging	Prod plan (read this before approving)	2026-11-25T15:09:18.1026316Z ^[[0m^[[1m^[[32mTerraform has been successfully initialized!^[[0m^[[32m^[[0m
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.2655265Z ^[[0m^[[1mmodule.web.data.aws_ssm_parameter.db_password: Reading...^[[0m^[[0m
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.2655847Z ^[[0m^[[1mmodule.web.data.aws_ami.al2023: Reading...^[[0m^[[0m
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.4426653Z ^[[0m^[[1mmodule.web.data.aws_ssm_parameter.db_password: Read complete after 0s [id=/acs730/prod/db_password]^[[0m
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.7558302Z ^[[0m^[[1mmodule.web.data.aws_ami.al2023: Read complete after 1s [id=ami-062caee4b7b602eb0]^[[0m
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8623701Z 
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8624501Z Terraform used the selected providers to generate the following execution
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8625052Z plan. Resource actions are indicated with the following symbols:
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8625676Z   ^[[32m+^[[0m create^[[0m
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8625821Z 
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8625964Z Terraform will perform the following actions:
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8626210Z 
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8626478Z ^[[1m  # module.web.aws_cloudwatch_metric_alarm.cpu_high[0]^[[0m will be created
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8626999Z ^[[0m  ^[[32m+^[[0m^[[0m resource "aws_cloudwatch_metric_alarm" "cpu_high" {
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8627435Z       ^[[32m+^[[0m^[[0m actions_enabled                       = true
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8627972Z       ^[[32m+^[[0m^[[0m alarm_description                     = "Average CPU above 70% for two 5-minute periods"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8628546Z       ^[[32m+^[[0m^[[0m alarm_name                            = "acs730-a1-prod-cpu-high-0"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8629047Z       ^[[32m+^[[0m^[[0m arn                                   = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8629660Z       ^[[32m+^[[0m^[[0m comparison_operator                   = "GreaterThanThreshold"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8630160Z       ^[[32m+^[[0m^[[0m dimensions                            = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8630631Z       ^[[32m+^[[0m^[[0m evaluate_low_sample_count_percentiles = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8631507Z       ^[[32m+^[[0m^[[0m evaluation_periods                    = 2
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8631877Z       ^[[32m+^[[0m^[[0m id                                    = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8632271Z       ^[[32m+^[[0m^[[0m metric_name                           = "CPUUtilization"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8632664Z       ^[[32m+^[[0m^[[0m namespace                             = "AWS/EC2"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8633046Z       ^[[32m+^[[0m^[[0m period                                = 300
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8633414Z       ^[[32m+^[[0m^[[0m statistic                             = "Average"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8634040Z       ^[[32m+^[[0m^[[0m tags                                  = {
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8634364Z           ^[[32m+^[[0m^[[0m "Environment" = "prod"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8634680Z           ^[[32m+^[[0m^[[0m "Lab"         = "assignment1"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8634984Z           ^[[32m+^[[0m^[[0m "Project"     = "acs730"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8635239Z         }
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8635500Z       ^[[32m+^[[0m^[[0m tags_all                              = {
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8635821Z           ^[[32m+^[[0m^[[0m "Course"      = "ACS730"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8636122Z           ^[[32m+^[[0m^[[0m "Environment" = "prod"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8636432Z           ^[[32m+^[[0m^[[0m "Lab"         = "assignment1"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8636744Z           ^[[32m+^[[0m^[[0m "Project"     = "acs730"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8636979Z         }
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8637227Z       ^[[32m+^[[0m^[[0m threshold                             = 70
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8637570Z       ^[[32m+^[[0m^[[0m treat_missing_data                    = "missing"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8637852Z     }
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8637950Z 
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8638119Z ^[[1m  # module.web.aws_cloudwatch_metric_alarm.cpu_high[1]^[[0m will be created
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8638409Z ^[[0m  ^[[32m+^[[0m^[[0m resource "aws_cloudwatch_metric_alarm" "cpu_high" {
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8638670Z       ^[[32m+^[[0m^[[0m actions_enabled                       = true
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8638976Z       ^[[32m+^[[0m^[[0m alarm_description                     = "Average CPU above 70% for two 5-minute periods"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8639509Z       ^[[32m+^[[0m^[[0m alarm_name                            = "acs730-a1-prod-cpu-high-1"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8639809Z       ^[[32m+^[[0m^[[0m arn                                   = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8640093Z       ^[[32m+^[[0m^[[0m comparison_operator                   = "GreaterThanThreshold"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8640376Z       ^[[32m+^[[0m^[[0m dimensions                            = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8640661Z       ^[[32m+^[[0m^[[0m evaluate_low_sample_count_percentiles = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8640925Z       ^[[32m+^[[0m^[[0m evaluation_periods                    = 2
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8641172Z       ^[[32m+^[[0m^[[0m id                                    = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8641437Z       ^[[32m+^[[0m^[[0m metric_name                           = "CPUUtilization"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8641690Z       ^[[32m+^[[0m^[[0m namespace                             = "AWS/EC2"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8641931Z       ^[[32m+^[[0m^[[0m period                                = 300
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8642174Z       ^[[32m+^[[0m^[[0m statistic                             = "Average"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8642403Z       ^[[32m+^[[0m^[[0m tags                                  = {
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8642610Z           ^[[32m+^[[0m^[[0m "Environment" = "prod"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8642817Z           ^[[32m+^[[0m^[[0m "Lab"         = "assignment1"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8643016Z           ^[[32m+^[[0m^[[0m "Project"     = "acs730"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8643169Z         }
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8643339Z       ^[[32m+^[[0m^[[0m tags_all                              = {
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8643545Z           ^[[32m+^[[0m^[[0m "Course"      = "ACS730"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8643737Z           ^[[32m+^[[0m^[[0m "Environment" = "prod"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8643940Z           ^[[32m+^[[0m^[[0m "Lab"         = "assignment1"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8644133Z           ^[[32m+^[[0m^[[0m "Project"     = "acs730"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8644517Z         }
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8644686Z       ^[[32m+^[[0m^[[0m threshold                             = 70
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8644921Z       ^[[32m+^[[0m^[[0m treat_missing_data                    = "missing"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8645094Z     }
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8645200Z 
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8645309Z ^[[1m  # module.web.aws_instance.web[0]^[[0m will be created
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8645537Z ^[[0m  ^[[32m+^[[0m^[[0m resource "aws_instance" "web" {
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8645780Z       ^[[32m+^[[0m^[[0m ami                                  = "ami-062caee4b7b602eb0"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8646035Z       ^[[32m+^[[0m^[[0m arn                                  = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8646415Z       ^[[32m+^[[0m^[[0m associate_public_ip_address          = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8646695Z       ^[[32m+^[[0m^[[0m availability_zone                    = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8646971Z       ^[[32m+^[[0m^[[0m cpu_core_count                       = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8647259Z       ^[[32m+^[[0m^[[0m cpu_threads_per_core                 = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8647534Z       ^[[32m+^[[0m^[[0m disable_api_stop                     = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8647807Z       ^[[32m+^[[0m^[[0m disable_api_termination              = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8648086Z       ^[[32m+^[[0m^[[0m ebs_optimized                        = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8648362Z       ^[[32m+^[[0m^[[0m enable_primary_ipv6                  = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8648621Z       ^[[32m+^[[0m^[[0m get_password_data                    = false
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8648886Z       ^[[32m+^[[0m^[[0m host_id                              = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8649155Z       ^[[32m+^[[0m^[[0m host_resource_group_arn              = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8649592Z       ^[[32m+^[[0m^[[0m iam_instance_profile                 = "LabInstanceProfile"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8649867Z       ^[[32m+^[[0m^[[0m id                                   = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8650136Z       ^[[32m+^[[0m^[[0m instance_initiated_shutdown_behavior = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8650415Z       ^[[32m+^[[0m^[[0m instance_lifecycle                   = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8650688Z       ^[[32m+^[[0m^[[0m instance_state                       = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8650946Z       ^[[32m+^[[0m^[[0m instance_type                        = "t3.micro"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8651209Z       ^[[32m+^[[0m^[[0m ipv6_address_count                   = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8651489Z       ^[[32m+^[[0m^[[0m ipv6_addresses                       = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8651753Z       ^[[32m+^[[0m^[[0m key_name                             = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8652013Z       ^[[32m+^[[0m^[[0m monitoring                           = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8652282Z       ^[[32m+^[[0m^[[0m outpost_arn                          = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8652559Z       ^[[32m+^[[0m^[[0m password_data                        = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8652829Z       ^[[32m+^[[0m^[[0m placement_group                      = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8653110Z       ^[[32m+^[[0m^[[0m placement_partition_number           = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8653388Z       ^[[32m+^[[0m^[[0m primary_network_interface_id         = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8653662Z       ^[[32m+^[[0m^[[0m private_dns                          = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8653929Z       ^[[32m+^[[0m^[[0m private_ip                           = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8654196Z       ^[[32m+^[[0m^[[0m public_dns                           = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8654465Z       ^[[32m+^[[0m^[[0m public_ip                            = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8654739Z       ^[[32m+^[[0m^[[0m secondary_private_ips                = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8655013Z       ^[[32m+^[[0m^[[0m security_groups                      = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8655369Z       ^[[32m+^[[0m^[[0m source_dest_check                    = true
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8655624Z       ^[[32m+^[[0m^[[0m spot_instance_request_id             = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8655889Z       ^[[32m+^[[0m^[[0m subnet_id                            = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8656132Z       ^[[32m+^[[0m^[[0m tags                                 = {
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8656339Z           ^[[32m+^[[0m^[[0m "Environment" = "prod"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8656563Z           ^[[32m+^[[0m^[[0m "Lab"         = "assignment1"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8656876Z           ^[[32m+^[[0m^[[0m "Name"        = "acs730-a1-prod-web-0"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8657091Z           ^[[32m+^[[0m^[[0m "Project"     = "acs730"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8657244Z         }
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8657410Z       ^[[32m+^[[0m^[[0m tags_all                             = {
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8657613Z           ^[[32m+^[[0m^[[0m "Course"      = "ACS730"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8657815Z           ^[[32m+^[[0m^[[0m "Environment" = "prod"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8658009Z           ^[[32m+^[[0m^[[0m "Lab"         = "assignment1"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8658223Z           ^[[32m+^[[0m^[[0m "Name"        = "acs730-a1-prod-web-0"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8658434Z           ^[[32m+^[[0m^[[0m "Project"     = "acs730"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8658583Z         }
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8658767Z       ^[[32m+^[[0m^[[0m tenancy                              = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8659036Z       ^[[32m+^[[0m^[[0m user_data                            = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8659384Z       ^[[32m+^[[0m^[[0m user_data_base64                     = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8659644Z       ^[[32m+^[[0m^[[0m user_data_replace_on_change          = false
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8659909Z       ^[[32m+^[[0m^[[0m vpc_security_group_ids               = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8660054Z 
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8660191Z       ^[[32m+^[[0m^[[0m capacity_reservation_specification (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8660347Z 
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8660441Z       ^[[32m+^[[0m^[[0m cpu_options (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8660563Z 
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8660666Z       ^[[32m+^[[0m^[[0m ebs_block_device (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8660785Z 
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8660889Z       ^[[32m+^[[0m^[[0m enclave_options (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8661015Z 
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8661124Z       ^[[32m+^[[0m^[[0m ephemeral_block_device (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8661257Z 
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8661367Z       ^[[32m+^[[0m^[[0m instance_market_options (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8661502Z 
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8661609Z       ^[[32m+^[[0m^[[0m maintenance_options (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8661738Z 
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8661841Z       ^[[32m+^[[0m^[[0m metadata_options (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8661963Z 
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8662065Z       ^[[32m+^[[0m^[[0m network_interface (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8662218Z 
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8662337Z       ^[[32m+^[[0m^[[0m private_dns_name_options (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8662476Z 
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8662573Z       ^[[32m+^[[0m^[[0m root_block_device (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8662741Z     }
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8662800Z 
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8662912Z ^[[1m  # module.web.aws_instance.web[1]^[[0m will be created
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8663134Z ^[[0m  ^[[32m+^[[0m^[[0m resource "aws_instance" "web" {
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8663382Z       ^[[32m+^[[0m^[[0m ami                                  = "ami-062caee4b7b602eb0"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8663638Z       ^[[32m+^[[0m^[[0m arn                                  = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8663912Z       ^[[32m+^[[0m^[[0m associate_public_ip_address          = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8664196Z       ^[[32m+^[[0m^[[0m availability_zone                    = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8664465Z       ^[[32m+^[[0m^[[0m cpu_core_count                       = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8664738Z       ^[[32m+^[[0m^[[0m cpu_threads_per_core                 = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8665111Z       ^[[32m+^[[0m^[[0m disable_api_stop                     = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8665385Z       ^[[32m+^[[0m^[[0m disable_api_termination              = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8665655Z       ^[[32m+^[[0m^[[0m ebs_optimized                        = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8665929Z       ^[[32m+^[[0m^[[0m enable_primary_ipv6                  = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8666185Z       ^[[32m+^[[0m^[[0m get_password_data                    = false
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8666433Z       ^[[32m+^[[0m^[[0m host_id                              = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8666790Z       ^[[32m+^[[0m^[[0m host_resource_group_arn              = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8667075Z       ^[[32m+^[[0m^[[0m iam_instance_profile                 = "LabInstanceProfile"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8667339Z       ^[[32m+^[[0m^[[0m id                                   = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8667611Z       ^[[32m+^[[0m^[[0m instance_initiated_shutdown_behavior = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8667913Z       ^[[32m+^[[0m^[[0m instance_lifecycle                   = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8668188Z       ^[[32m+^[[0m^[[0m instance_state                       = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8668451Z       ^[[32m+^[[0m^[[0m instance_type                        = "t3.micro"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8668714Z       ^[[32m+^[[0m^[[0m ipv6_address_count                   = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8668991Z       ^[[32m+^[[0m^[[0m ipv6_addresses                       = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8669334Z       ^[[32m+^[[0m^[[0m key_name                             = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8669597Z       ^[[32m+^[[0m^[[0m monitoring                           = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8669871Z       ^[[32m+^[[0m^[[0m outpost_arn                          = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8670140Z       ^[[32m+^[[0m^[[0m password_data                        = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8670417Z       ^[[32m+^[[0m^[[0m placement_group                      = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8670700Z       ^[[32m+^[[0m^[[0m placement_partition_number           = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8670981Z       ^[[32m+^[[0m^[[0m primary_network_interface_id         = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8671256Z       ^[[32m+^[[0m^[[0m private_dns                          = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8671525Z       ^[[32m+^[[0m^[[0m private_ip                           = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8671789Z       ^[[32m+^[[0m^[[0m public_dns                           = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8672054Z       ^[[32m+^[[0m^[[0m public_ip                            = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8672327Z       ^[[32m+^[[0m^[[0m secondary_private_ips                = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8672598Z       ^[[32m+^[[0m^[[0m security_groups                      = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8672849Z       ^[[32m+^[[0m^[[0m source_dest_check                    = true
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8673105Z       ^[[32m+^[[0m^[[0m spot_instance_request_id             = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8673371Z       ^[[32m+^[[0m^[[0m subnet_id                            = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8673609Z       ^[[32m+^[[0m^[[0m tags                                 = {
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8673820Z           ^[[32m+^[[0m^[[0m "Environment" = "prod"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8674014Z           ^[[32m+^[[0m^[[0m "Lab"         = "assignment1"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8674235Z           ^[[32m+^[[0m^[[0m "Name"        = "acs730-a1-prod-web-1"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8674522Z           ^[[32m+^[[0m^[[0m "Project"     = "acs730"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8674677Z         }
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8674838Z       ^[[32m+^[[0m^[[0m tags_all                             = {
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8675045Z           ^[[32m+^[[0m^[[0m "Course"      = "ACS730"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8675239Z           ^[[32m+^[[0m^[[0m "Environment" = "prod"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8675537Z           ^[[32m+^[[0m^[[0m "Lab"         = "assignment1"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8675758Z           ^[[32m+^[[0m^[[0m "Name"        = "acs730-a1-prod-web-1"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8675971Z           ^[[32m+^[[0m^[[0m "Project"     = "acs730"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8676122Z         }
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8676310Z       ^[[32m+^[[0m^[[0m tenancy                              = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8676575Z       ^[[32m+^[[0m^[[0m user_data                            = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8676846Z       ^[[32m+^[[0m^[[0m user_data_base64                     = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8677191Z       ^[[32m+^[[0m^[[0m user_data_replace_on_change          = false
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8677453Z       ^[[32m+^[[0m^[[0m vpc_security_group_ids               = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8677605Z 
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8677734Z       ^[[32m+^[[0m^[[0m capacity_reservation_specification (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8677888Z 
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8677986Z       ^[[32m+^[[0m^[[0m cpu_options (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8678110Z 
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8678209Z       ^[[32m+^[[0m^[[0m ebs_block_device (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8678334Z 
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8678436Z       ^[[32m+^[[0m^[[0m enclave_options (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8678556Z 
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8678667Z       ^[[32m+^[[0m^[[0m ephemeral_block_device (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8678801Z 
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8678909Z       ^[[32m+^[[0m^[[0m instance_market_options (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8679045Z 
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8679155Z       ^[[32m+^[[0m^[[0m maintenance_options (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8679356Z 
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8679458Z       ^[[32m+^[[0m^[[0m metadata_options (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8679582Z 
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8679680Z       ^[[32m+^[[0m^[[0m network_interface (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8679807Z 
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8679922Z       ^[[32m+^[[0m^[[0m private_dns_name_options (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8680060Z 
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8680157Z       ^[[32m+^[[0m^[[0m root_block_device (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8680326Z     }
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8680391Z 
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8680507Z ^[[1m  # module.web.aws_security_group.web^[[0m will be created
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8680743Z ^[[0m  ^[[32m+^[[0m^[[0m resource "aws_security_group" "web" {
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8680971Z       ^[[32m+^[[0m^[[0m arn                    = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8681306Z       ^[[32m+^[[0m^[[0m description            = "ACS730 Assignment 1 prod web servers - port 80 in, nothing else"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8681590Z       ^[[32m+^[[0m^[[0m egress                 = [
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8681779Z           ^[[32m+^[[0m^[[0m {
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8681947Z               ^[[32m+^[[0m^[[0m cidr_blocks      = [
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8682140Z                   ^[[32m+^[[0m^[[0m "0.0.0.0/0",
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8682291Z                 ]
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8682450Z               ^[[32m+^[[0m^[[0m from_port        = 0
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8682642Z               ^[[32m+^[[0m^[[0m ipv6_cidr_blocks = []
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8682839Z               ^[[32m+^[[0m^[[0m prefix_list_ids  = []
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8683047Z               ^[[32m+^[[0m^[[0m protocol         = "-1"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8683245Z               ^[[32m+^[[0m^[[0m security_groups  = []
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8683438Z               ^[[32m+^[[0m^[[0m self             = false
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8683634Z               ^[[32m+^[[0m^[[0m to_port          = 0
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8683843Z                 ^[[90m# (1 unchanged attribute hidden)^[[0m^[[0m
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8684012Z             },
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8684126Z         ]
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8684298Z       ^[[32m+^[[0m^[[0m id                     = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8684509Z       ^[[32m+^[[0m^[[0m ingress                = [
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8684686Z           ^[[32m+^[[0m^[[0m {
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8684849Z               ^[[32m+^[[0m^[[0m cidr_blocks      = [
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8685037Z                   ^[[32m+^[[0m^[[0m "0.0.0.0/0",
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8685284Z                 ]
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8685439Z               ^[[32m+^[[0m^[[0m from_port        = 80
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8685630Z               ^[[32m+^[[0m^[[0m ipv6_cidr_blocks = []
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8685827Z               ^[[32m+^[[0m^[[0m prefix_list_ids  = []
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8686025Z               ^[[32m+^[[0m^[[0m protocol         = "tcp"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8686221Z               ^[[32m+^[[0m^[[0m security_groups  = []
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8686421Z               ^[[32m+^[[0m^[[0m self             = false
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8686612Z               ^[[32m+^[[0m^[[0m to_port          = 80
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8686820Z                 ^[[90m# (1 unchanged attribute hidden)^[[0m^[[0m
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8687073Z             },
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8687191Z         ]
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8687364Z       ^[[32m+^[[0m^[[0m name                   = "acs730-a1-prod-sg"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8687603Z       ^[[32m+^[[0m^[[0m name_prefix            = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8687843Z       ^[[32m+^[[0m^[[0m owner_id               = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8688064Z       ^[[32m+^[[0m^[[0m revoke_rules_on_delete = false
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8688261Z       ^[[32m+^[[0m^[[0m tags                   = {
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8688457Z           ^[[32m+^[[0m^[[0m "Environment" = "prod"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8688657Z           ^[[32m+^[[0m^[[0m "Lab"         = "assignment1"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8688875Z           ^[[32m+^[[0m^[[0m "Name"        = "acs730-a1-prod-sg"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8689088Z           ^[[32m+^[[0m^[[0m "Project"     = "acs730"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8689240Z         }
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8689458Z       ^[[32m+^[[0m^[[0m tags_all               = {
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8689653Z           ^[[32m+^[[0m^[[0m "Course"      = "ACS730"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8689841Z           ^[[32m+^[[0m^[[0m "Environment" = "prod"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8690035Z           ^[[32m+^[[0m^[[0m "Lab"         = "assignment1"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8690254Z           ^[[32m+^[[0m^[[0m "Name"        = "acs730-a1-prod-sg"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8690454Z           ^[[32m+^[[0m^[[0m "Project"     = "acs730"
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8690608Z         }
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8690779Z       ^[[32m+^[[0m^[[0m vpc_id                 = (known after apply)
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8690950Z     }
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8691015Z 
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8691108Z ^[[1mPlan:^[[0m 5 to add, 0 to change, 0 to destroy.
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8691280Z ^[[0m
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8691393Z Changes to Outputs:
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8691550Z   ^[[32m+^[[0m^[[0m alarm_names        = [
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8691746Z       ^[[32m+^[[0m^[[0m "acs730-a1-prod-cpu-high-0",
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8691954Z       ^[[32m+^[[0m^[[0m "acs730-a1-prod-cpu-high-1",
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8692109Z     ]
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8692249Z   ^[[32m+^[[0m^[[0m db_password_length = 21
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8692431Z   ^[[32m+^[[0m^[[0m instance_ids       = [
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8692609Z       ^[[32m+^[[0m^[[0m (known after apply),
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8692790Z       ^[[32m+^[[0m^[[0m (known after apply),
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8692943Z     ]
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8693076Z   ^[[32m+^[[0m^[[0m public_ips         = [
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8693253Z       ^[[32m+^[[0m^[[0m (known after apply),
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8693433Z       ^[[32m+^[[0m^[[0m (known after apply),
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.8693578Z     ]
+staging	Post Run aws-actions/configure-aws-credentials@v4	﻿2026-11-25T15:09:21.2268794Z Post job cleanup.
+staging	Post Run actions/checkout@v4	﻿2026-11-25T15:09:21.3135953Z Post job cleanup.
+staging	Post Run actions/checkout@v4	2026-11-25T15:09:21.3727333Z [command]/usr/bin/git version
+staging	Post Run actions/checkout@v4	2026-11-25T15:09:21.3763480Z git version 2.56.1
+staging	Post Run actions/checkout@v4	2026-11-25T15:09:21.3789805Z Temporarily overriding HOME='/home/runner/work/_temp/6ee36e5b-c993-43db-aa53-dcb640b62533' before making global git config changes
+staging	Post Run actions/checkout@v4	2026-11-25T15:09:21.3790603Z Adding repository directory to the temporary git global config as a safe directory
+staging	Post Run actions/checkout@v4	2026-11-25T15:09:21.3792253Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/acs730-labs/acs730-labs
+staging	Post Run actions/checkout@v4	2026-11-25T15:09:21.3830079Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+staging	Post Run actions/checkout@v4	2026-11-25T15:09:21.3863711Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+staging	Post Run actions/checkout@v4	2026-11-25T15:09:21.4133836Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+staging	Post Run actions/checkout@v4	2026-11-25T15:09:21.4168722Z http.https://github.com/.extraheader
+staging	Post Run actions/checkout@v4	2026-11-25T15:09:21.4180064Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+staging	Post Run actions/checkout@v4	2026-11-25T15:09:21.4226265Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+staging	Post Run actions/checkout@v4	2026-11-25T15:09:21.4490552Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+staging	Post Run actions/checkout@v4	2026-11-25T15:09:21.4519553Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+staging	Complete job	﻿2026-11-25T15:09:21.4861386Z Cleaning up orphan processes
+staging	Complete job	2026-11-25T15:09:21.5134902Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, aws-actions/configure-aws-credentials@v4, hashicorp/setup-terraform@v3. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

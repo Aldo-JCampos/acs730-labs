@@ -1,0 +1,59 @@
+== parameters (metadata only)
+{
+    "Parameters": [
+        {
+            "Name": "/acs730/dev/db_password",
+            "ARN": "arn:aws:ssm:us-east-1:615313524491:parameter/acs730/dev/db_password",
+            "Type": "SecureString",
+            "KeyId": "alias/aws/ssm",
+            "LastModifiedDate": "2026-11-25T11:43:01.049000+00:00",
+            "LastModifiedUser": "arn:aws:sts::615313524491:assumed-role/LabRole/i-00aff736951983d5d",
+            "Version": 1,
+            "Tier": "Standard",
+            "Policies": [],
+            "DataType": "text"
+        },
+        {
+            "Name": "/acs730/lab3/greeting",
+            "ARN": "arn:aws:ssm:us-east-1:615313524491:parameter/acs730/lab3/greeting",
+            "Type": "String",
+            "LastModifiedDate": "2026-11-07T06:14:36.519000+00:00",
+            "LastModifiedUser": "arn:aws:sts::615313524491:assumed-role/voclabs/user5412341=acampos-perez@myseneca.ca",
+            "Version": 1,
+            "Tier": "Standard",
+            "Policies": [],
+            "DataType": "text"
+        },
+        {
+            "Name": "/acs730/prod/db_password",
+            "ARN": "arn:aws:ssm:us-east-1:615313524491:parameter/acs730/prod/db_password",
+            "Type": "SecureString",
+            "KeyId": "alias/aws/ssm",
+            "LastModifiedDate": "2026-11-25T11:43:02.828000+00:00",
+            "LastModifiedUser": "arn:aws:sts::615313524491:assumed-role/LabRole/i-00aff736951983d5d",
+            "Version": 1,
+            "Tier": "Standard",
+            "Policies": [],
+            "DataType": "text"
+        },
+        {
+            "Name": "/acs730/staging/db_password",
+            "ARN": "arn:aws:ssm:us-east-1:615313524491:parameter/acs730/staging/db_password",
+            "Type": "SecureString",
+            "KeyId": "alias/aws/ssm",
+            "LastModifiedDate": "2026-11-25T11:43:02.138000+00:00",
+            "LastModifiedUser": "arn:aws:sts::615313524491:assumed-role/LabRole/i-00aff736951983d5d",
+            "Version": 1,
+            "Tier": "Standard",
+            "Policies": [],
+            "DataType": "text"
+        }
+    ]
+}
+== Terraform reading the data source in the pipeline logs
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:55.3005658Z ^[[0m^[[1mmodule.web.data.aws_ssm_parameter.db_password: Reading...^[[0m^[[0m
+staging	Run terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve	2026-11-25T15:08:55.4700585Z ^[[0m^[[1mmodule.web.data.aws_ssm_parameter.db_password: Read complete after 0s [id=/acs730/staging/db_password]^[[0m
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.2655265Z ^[[0m^[[1mmodule.web.data.aws_ssm_parameter.db_password: Reading...^[[0m^[[0m
+staging	Prod plan (read this before approving)	2026-11-25T15:09:20.4426653Z ^[[0m^[[1mmodule.web.data.aws_ssm_parameter.db_password: Read complete after 0s [id=/acs730/prod/db_password]^[[0m
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:31.8027593Z ^[[0m^[[1mmodule.web.data.aws_ssm_parameter.db_password: Reading...^[[0m^[[0m
+prod	Run terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve	2026-11-25T15:14:31.9854354Z ^[[0m^[[1mmodule.web.data.aws_ssm_parameter.db_password: Read complete after 0s [id=/acs730/prod/db_password]^[[0m
