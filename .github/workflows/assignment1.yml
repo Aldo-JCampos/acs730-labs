@@ -1,0 +1,103 @@
+name: assignment1
+
+# Scoped to this assignment. The evidence and report are excluded so that
+# committing them does not start another deploy.
+on:
+  pull_request:
+    paths:
+      - 'assignment1/**'
+      - '.github/workflows/assignment1.yml'
+      - '!assignment1/evidence/**'
+      - '!assignment1/REPORT.md'
+  push:
+    branches: [main]
+    paths:
+      - 'assignment1/**'
+      - '.github/workflows/assignment1.yml'
+      - '!assignment1/evidence/**'
+      - '!assignment1/REPORT.md'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: assignment1-deploy
+  cancel-in-progress: false
+
+env:
+  TF_IN_AUTOMATION: "true"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.10.3
+          terraform_wrapper: false
+      - run: terraform fmt -check -recursive assignment1/terraform
+      - run: |
+          for e in dev staging prod; do
+            terraform -chdir=assignment1/terraform/$e init -backend=false -input=false
+            terraform -chdir=assignment1/terraform/$e validate
+          done
+
+  # Runs on PRs only. Proves the environment-scoped credentials work.
+  credcheck:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
+          aws-region: ${{ vars.AWS_REGION }}
+      - run: aws sts get-caller-identity
+
+  staging:
+    if: github.event_name == 'push'
+    needs: validate
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - uses: actions/checkout@v4
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
+          aws-region: ${{ vars.AWS_REGION }}
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.10.3
+          terraform_wrapper: false
+      - run: terraform -chdir=assignment1/terraform/staging init -input=false
+      - run: terraform -chdir=assignment1/terraform/staging apply -input=false -auto-approve
+      # The reviewer reads this in the log while the prod gate is waiting.
+      # Academy has one account, so these credentials can read prod too.
+      - name: Prod plan (read this before approving)
+        run: |
+          terraform -chdir=assignment1/terraform/prod init -input=false
+          terraform -chdir=assignment1/terraform/prod plan -input=false
+
+  prod:
+    needs: staging
+    runs-on: ubuntu-latest
+    environment: prod
+    steps:
+      - uses: actions/checkout@v4
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
+          aws-region: ${{ vars.AWS_REGION }}
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.10.3
+          terraform_wrapper: false
+      - run: terraform -chdir=assignment1/terraform/prod init -input=false
+      - run: terraform -chdir=assignment1/terraform/prod apply -input=false -auto-approve
